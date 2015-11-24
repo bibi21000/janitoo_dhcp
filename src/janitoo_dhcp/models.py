@@ -60,6 +60,7 @@ def extend( jntmodel ):
             """
             """
             return self.cmd_classes.split(",")
+    jntmodel.Lease = Lease
 
     class LeaseParam(Base, CRUDMixin):
         __tablename__ = 'dhcp_leases_param'
@@ -79,3 +80,4 @@ def extend( jntmodel ):
                                   ['dhcp_leases.add_ctrl', 'dhcp_leases.add_node'],
                                   name="dhcp_leases_param_foreign_lease"),
                                 )
+    jntmodel.LeaseParam = LeaseParam

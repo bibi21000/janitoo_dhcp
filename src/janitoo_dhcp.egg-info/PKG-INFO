@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: janitoo-dhcp
-Version: 0.0.6
+Version: 0.0.7
 Summary: The DHCP server for janitoo
 Home-page: http://bibi21000.gallet.info/
 Author: Sébastien GALLET aka bibi2100 <bibi21000@gmail.com>
@@ -22,4 +22,5 @@ License:
         along with Janitoo. If not, see <http://www.gnu.org/licenses/>.
     
 Description: The DHCP server for janitoo
+Keywords: dhcp
 Platform: UNKNOWN

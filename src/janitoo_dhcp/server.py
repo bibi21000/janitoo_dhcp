@@ -37,7 +37,7 @@ import time
 from janitoo.dhcp import HeartbeatMessage
 from janitoo.mqtt import MQTTClient
 from janitoo.server import JNTControllerManager
-from janitoo.utils import saobject_to_dict, HADD, HADD_SEP, json_dumps, json_loads
+from janitoo.utils import HADD, HADD_SEP, json_dumps, json_loads
 from janitoo.utils import TOPIC_NODES, TOPIC_NODES_REPLY, TOPIC_NODES_REQUEST
 from janitoo.utils import TOPIC_BROADCAST_REPLY, TOPIC_BROADCAST_REQUEST
 from janitoo.utils import TOPIC_VALUES_USER, TOPIC_VALUES_CONFIG, TOPIC_VALUES_BASIC, TOPIC_VALUES_SYSTEM, TOPIC_HEARTBEAT
@@ -109,13 +109,12 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         #~ print "self.network.resolv_timeout", self.network.resolv_timeout
         self.resolv_timer = threading.Timer(self.network.resolv_timeout, self.resolv_heartbeat)
         self.resolv_timer.start()
-
-        #ProgrammingError: (pysqlite2.dbapi2.ProgrammingError) SQLite objects created in a thread can only be used in that same thread.
-        #The object was created in thread id 139632282289984 and this is thread id 139632153548544
-        #[SQL: u'SELECT dhcpd_lease.add_ctrl AS dhcpd_lease_add_ctrl, dhcpd_lease.add_node AS dhcpd_lease_add_node, dhcpd_lease.name AS dhcpd_lease_name, dhcpd_lease.location AS dhcpd_lease_location, dhcpd_lease.cmd_classes AS dhcpd_lease_cmd_classes, dhcpd_lease.state AS dhcpd_lease_state, dhcpd_lease.last_seen AS dhcpd_lease_last_seen \nFROM dhcpd_lease'] [parameters: [immutabledict({})]]
-        #self.lease_mgr.start(self.dbsession)
-        #Use a new session for the lease
-        self.network.boot({0:self.get_controller_hadd()})
+        loop_sleep = 0.10
+        try:
+            loop_sleep = int(self.options.get_option('network','loop_sleep'))
+        except:
+            logger.exception("[%s] - Exception when retrieving value of loop_sleep for network. Use default value instead", self.__class__.__name__)
+        self.network.boot({0:self.get_controller_hadd()}, loop_sleep=loop_sleep)
         self.mqtt_client = MQTTClient(options=self.options.data)
         self.mqtt_client.add_topic(topic='/dhcp/lease/new', callback=self.mqtt_on_lease_new)
         self.mqtt_client.add_topic(topic='/dhcp/lease/repair', callback=self.mqtt_on_lease_repair)
@@ -131,6 +130,11 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         self.mqtt_client.start()
         self.heartbeat_timer = threading.Timer(self.lease_mgr.heartbeat_timeout, self.check_heartbeat)
         self.heartbeat_timer.start()
+        #ProgrammingError: (pysqlite2.dbapi2.ProgrammingError) SQLite objects created in a thread can only be used in that same thread.
+        #The object was created in thread id 139632282289984 and this is thread id 139632153548544
+        #[SQL: u'SELECT dhcpd_lease.add_ctrl AS dhcpd_lease_add_ctrl, dhcpd_lease.add_node AS dhcpd_lease_add_node, dhcpd_lease.name AS dhcpd_lease_name, dhcpd_lease.location AS dhcpd_lease_location, dhcpd_lease.cmd_classes AS dhcpd_lease_cmd_classes, dhcpd_lease.state AS dhcpd_lease_state, dhcpd_lease.last_seen AS dhcpd_lease_last_seen \nFROM dhcpd_lease'] [parameters: [immutabledict({})]]
+        #self.lease_mgr.start(self.dbsession)
+        #Use a new session for the lease
         self.lease_mgr.start(self.create_session())
         JNTControllerManager.start_controller_timer(self)
 

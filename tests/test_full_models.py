@@ -64,4 +64,3 @@ class TestFullModels(JNTTBase):
         self.dbmaker.configure(bind=engine)
         self.dbsession = scoped_session(self.dbmaker)
         Base.metadata.create_all(bind=engine)
-        eee

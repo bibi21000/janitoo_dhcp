@@ -28,38 +28,46 @@ import time, datetime
 import unittest
 import threading
 import logging
-from common import TestJanitoo, TestJanitooFull, JNTDBCommon, SLEEP
-from janitoo.runner import Runner, jnt_parse_args
-from janitoo_dhcp.server import DHCPServer
 import mock
-from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 import uuid
 
-class TestMqtt(TestJanitooFull):
+from janitoo_nosetests.server import JNTTServer, JNTTServerCommon
+from janitoo_nosetests.thread import JNTTThread, JNTTThreadCommon
+
+from janitoo.runner import Runner, jnt_parse_args
+from janitoo_dhcp.server import DHCPServer
+from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
+
+class TestMqtt(JNTTServer, JNTTServerCommon):
     """Test the common server
     """
-    prog='dontchange.py'
+    loglevel = logging.DEBUG
+    path = '/tmp/janitoo_test'
+    broker_user = 'toto'
+    broker_password = 'toto'
+    server_class = DHCPServer
+    server_conf = "/opt/janitoo/src/janitoo_dhcp/tests/data/janitoo_dhcp.conf"
 
     def on_message(self, client, userdata, message):
         """On generic message
         """
         self.payload=json_loads(message.payload)
 
-    def setUp(self):
-        TestJanitooFull.setUp(self)
-        self.mqttc = None
-        self.mqtthearbeat = None
-        with mock.patch('sys.argv', [self.prog, 'start', '--conf_file=/opt/janitoo/src/janitoo_dhcp/tests/data/janitoo_dhcpd.conf']):
-            options = vars(jnt_parse_args())
-            self.server = DHCPServer(options)
-            self.startClient()
-        self.server.start()
-        self.payload = None
-
-    def tearDown(self):
-        self.stopClient()
-        self.server.stop()
-        TestJanitoo.tearDown(self)
+    #~ def setUp(self):
+        #~ TestJanitooFull.setUp(self)
+        #~ self.mqttc = None
+        #~ self.mqtthearbeat = None
+        #~ with mock.patch('sys.argv', [self.prog, 'start', '--conf_file=/opt/janitoo/src/janitoo_dhcp/tests/data/janitoo_dhcp.conf']):
+            #~ options = vars(jnt_parse_args())
+            #~ self.server = DHCPServer(options)
+            #~ self.startClient()
+        #~ self.server.start()
+        #~ self.payload = None
+#~
+    #~ def tearDown(self):
+        #~ self.stopClient()
+        #~ self.server.stop()
+        #~ TestJanitoo.tearDown(self)
 
     def test_100_dhcp_heartbeat_bad(self):
         self.topic = "/dhcp/heartbeat"
