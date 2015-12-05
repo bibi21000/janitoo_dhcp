@@ -61,7 +61,7 @@ class TestDhcpSerser(JNTTServer, JNTTServerCommon):
     broker_user = 'toto'
     broker_password = 'toto'
     server_class = DHCPServer
-    server_conf = "/opt/janitoo/src/janitoo_dhcp/tests/data/janitoo_dhcp.conf"
+    server_conf = "tests/data/janitoo_dhcp.conf"
 
     def test_100_dhcp_cache_heartbeat_online(self):
         self.start()
