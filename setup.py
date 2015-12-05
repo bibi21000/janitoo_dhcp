@@ -85,12 +85,15 @@ setup(
     scripts=['src/scripts/jnt_dhcp'],
     packages = find_packages('src', exclude=["scripts", "docs", "config"]),
     package_dir = { '': 'src' },
-    keywords = "dhcp",
+    keywords = ["dhcp","core"],
     include_package_data=True,
     data_files = data_files,
     install_requires=[
                      'janitoo_db == %s'%janitoo_version,
                     ],
+    dependency_links = [
+      'https://github.com/bibi21000/janitoo_db/archive/master.zip#egg=janitoo_db',
+    ],
     entry_points = {
         "janitoo.models": [
             "janitoo_dhcp = janitoo_dhcp.models:extend",
