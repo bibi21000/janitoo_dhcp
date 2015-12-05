@@ -54,13 +54,8 @@ class TestExtensionModels(JNTTBase):
         JNTTBase.setUp(self)
         from janitoo_dhcp.models import extend
 
-    def test_001_engine(self):
-        options = JNTOptions({'conf_file':'tests/data/janitoo_dhcp.conf'})
-        options.load()
-        engine = create_db_engine(options)
-        self.dbmaker = sessionmaker()
-        # Bind the sessionmaker to engine
-        self.dbmaker.configure(bind=engine)
-        self.dbsession = scoped_session(self.dbmaker)
-        Base.metadata.create_all(bind=engine)
-
+    def test_001_lease(self):
+        now = datetime.datetime.now()
+        lease = jntmodels.Lease(add_ctrl="0001", add_node='0001', name="name", location="location", state='BOOT', cmd_classes=[], last_seen=now)
+        self.dbsession.merge(lease)
+        self.dbsession.commit()
