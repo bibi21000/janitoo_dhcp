@@ -27,32 +27,17 @@ import sys, os
 import time, datetime
 import unittest
 import threading
-import logging
-from pkg_resources import iter_entry_points
-
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 from janitoo_nosetests import JNTTBase
+from janitoo_nosetests.models import JNTTModels
 
 from janitoo.options import JNTOptions
 from janitoo_db.base import Base, create_db_engine
 
-##############################################################
-#Check that we are in sync with the official command classes
-#Must be implemented for non-regression
-from janitoo.classes import COMMAND_DESC
-
-COMMAND_DISCOVERY = 0x5000
-
-assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
-##############################################################
-
-class TestExtensionModels(JNTTBase):
-    """Test the DatalogServer server
+class TestModels(JNTTModels):
+    """Test the models
     """
-    def setUp(self):
-        JNTTBase.setUp(self)
-        from janitoo_dhcp.models import extend
 
     def test_001_lease(self):
         now = datetime.datetime.now()
