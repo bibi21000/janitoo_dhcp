@@ -27,9 +27,8 @@ __copyright__ = "Copyright © 2013-2014-2015 Sébastien GALLET aka bibi21000"
 # Set default logging handler to avoid "No handler found" warnings.
 import logging
 logger = logging.getLogger('janitoo.dhcp')
-import os
-import sys
 
+import sys
 import sqlalchemy as sa
 from sqlalchemy.orm import relationship, backref, synonym
 
