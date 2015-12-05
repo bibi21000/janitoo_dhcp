@@ -48,19 +48,7 @@ COMMAND_DISCOVERY = 0x5000
 assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
-class TestFullModels(JNTTBase):
-    """Test the DatalogServer server
+class TestFullModels(JNTTFullModels, JNTTFullModelsCommon):
+    """Test the full model
     """
-    def setUp(self):
-        JNTTBase.setUp(self)
-        import janitoo_db.models
-
-    def test_001_engine(self):
-        options = JNTOptions({'conf_file':'tests/data/janitoo_dhcp.conf'})
-        options.load()
-        engine = create_db_engine(options)
-        self.dbmaker = sessionmaker()
-        # Bind the sessionmaker to engine
-        self.dbmaker.configure(bind=engine)
-        self.dbsession = scoped_session(self.dbmaker)
-        Base.metadata.create_all(bind=engine)
+    pass
