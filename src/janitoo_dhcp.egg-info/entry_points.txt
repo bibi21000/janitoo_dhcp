@@ -1,3 +1,0 @@
-[janitoo.models]
-janitoo_dhcp = janitoo_dhcp.models:extend
-
