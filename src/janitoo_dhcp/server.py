@@ -126,7 +126,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         #[SQL: u'SELECT dhcpd_lease.add_ctrl AS dhcpd_lease_add_ctrl, dhcpd_lease.add_node AS dhcpd_lease_add_node, dhcpd_lease.name AS dhcpd_lease_name, dhcpd_lease.location AS dhcpd_lease_location, dhcpd_lease.cmd_classes AS dhcpd_lease_cmd_classes, dhcpd_lease.state AS dhcpd_lease_state, dhcpd_lease.last_seen AS dhcpd_lease_last_seen \nFROM dhcpd_lease'] [parameters: [immutabledict({})]]
         #self.lease_mgr.start(self.dbsession)
         #Use a new session for the lease
-        self.lease_mgr.start(self.create_session())
+        self.lease_mgr.start(self.dbsession)
         JNTControllerManager.start_controller_timer(self)
 
     def resolv_heartbeat(self):
