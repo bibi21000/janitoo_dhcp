@@ -29,8 +29,6 @@ import logging
 logger = logging.getLogger('janitoo.dhcp')
 import os, sys
 import threading
-import sqlite3 as lite
-from pkg_resources import get_distribution, DistributionNotFound
 import uuid as muuid
 import time
 
@@ -72,8 +70,8 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         self.mqtt_client = None
         self.resolv_timer = None
         self.heartbeat_timer = None
-        JNTDBServer.__init__(self, options)
         self.section = "dhcp"
+        JNTDBServer.__init__(self, options)
         JNTControllerManager.__init__(self)
         self.lease_mgr = LeaseManager(self.options)
         #~ self.uuid = self.options.get_option(self.section, 'uuid')
