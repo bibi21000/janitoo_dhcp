@@ -94,19 +94,14 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         JNTDBServer.start(self)
         JNTControllerManager.start_controller(self, self.section, self.options, cmd_classes=[COMMAND_DHCPD], hadd=None, name="DHCP Server",
             product_name="DHCP Server", product_type="DHCP Server")
-        self.mqtt_resolv = MQTTClient(options=self.options.data)
+        self.mqtt_resolv = MQTTClient(options=self.options.data, loop_sleep=self.loop_sleep)
         self.mqtt_resolv.connect()
         self.mqtt_resolv.start()
         #~ print "self.network.resolv_timeout", self.network.resolv_timeout
         self.resolv_timer = threading.Timer(self.network.resolv_timeout, self.resolv_heartbeat)
         self.resolv_timer.start()
-        loop_sleep = 0.10
-        try:
-            loop_sleep = int(self.options.get_option('network','loop_sleep'))
-        except:
-            logger.exception("[%s] - Exception when retrieving value of loop_sleep for network. Use default value instead", self.__class__.__name__)
-        self.network.boot({0:self.get_controller_hadd()}, loop_sleep=loop_sleep)
-        self.mqtt_client = MQTTClient(options=self.options.data)
+        self.network.boot({0:self.get_controller_hadd()}, loop_sleep=self.loop_sleep)
+        self.mqtt_client = MQTTClient(options=self.options.data, loop_sleep=self.loop_sleep)
         self.mqtt_client.add_topic(topic='/dhcp/lease/new', callback=self.mqtt_on_lease_new)
         self.mqtt_client.add_topic(topic='/dhcp/lease/repair', callback=self.mqtt_on_lease_repair)
         self.mqtt_client.add_topic(topic='/dhcp/lease/lock', callback=self.mqtt_on_lease_lock)
