@@ -54,7 +54,7 @@ assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
 class TestDhcpSerser(JNTTServer, JNTTServerCommon):
-    """Test the DatalogServer server
+    """Test the server
     """
     loglevel = logging.DEBUG
     path = '/tmp/janitoo_test'

@@ -31,10 +31,11 @@ import logging
 import mock
 import uuid
 
+from alembic import command as alcommand
+
 from janitoo_nosetests.server import JNTTServer, JNTTServerCommon
 from janitoo_nosetests.thread import JNTTThread, JNTTThreadCommon
 
-from janitoo.runner import Runner, jnt_parse_args
 from janitoo_dhcp.server import DHCPServer
 from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 
@@ -47,23 +48,6 @@ class TestMqtt(JNTTServer):
     broker_password = 'toto'
     server_class = DHCPServer
     server_conf = "tests/data/janitoo_dhcp.conf"
-
-
-    #~ def setUp(self):
-        #~ TestJanitooFull.setUp(self)
-        #~ self.mqttc = None
-        #~ self.mqtthearbeat = None
-        #~ with mock.patch('sys.argv', [self.prog, 'start', '--conf_file=/opt/janitoo/src/janitoo_dhcp/tests/data/janitoo_dhcp.conf']):
-            #~ options = vars(jnt_parse_args())
-            #~ self.server = DHCPServer(options)
-            #~ self.startClient()
-        #~ self.server.start()
-        #~ self.message = None
-#~
-    #~ def tearDown(self):
-        #~ self.stopClient()
-        #~ self.server.stop()
-        #~ TestJanitoo.tearDown(self)
 
     def on_message(self, client, userdata, message):
         """On generic message

@@ -38,6 +38,7 @@ from janitoo_db.base import Base, create_db_engine
 class TestModels(JNTTModels):
     """Test the models
     """
+    models_conf = "tests/data/janitoo_dhcp.conf"
 
     def test_001_lease(self):
         now = datetime.datetime.now()
