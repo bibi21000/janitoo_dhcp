@@ -198,6 +198,11 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         JNTDBServer.stop(self)
         logger.info("Server stopped")
 
+    def start_threads(self):
+        """Start the threads associated to this server.
+        """
+        pass
+
     def check_heartbeat(self):
         """Check the states of the machines. Must be called in a timer
         Called in a separate thread. Must use a scoped_session.
