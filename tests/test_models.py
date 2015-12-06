@@ -34,6 +34,7 @@ from janitoo_nosetests.models import JNTTModels
 
 from janitoo.options import JNTOptions
 from janitoo_db.base import Base, create_db_engine
+import janitoo_db.models as jntmodels
 
 class TestModels(JNTTModels):
     """Test the models
