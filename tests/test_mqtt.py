@@ -33,13 +33,13 @@ import uuid
 
 from alembic import command as alcommand
 
-from janitoo_nosetests.server import JNTTServer, JNTTServerCommon
+from janitoo_nosetests.dbserver import JNTTDBServer, JNTTDBServerCommon
 from janitoo_nosetests.thread import JNTTThread, JNTTThreadCommon
 
 from janitoo_dhcp.server import DHCPServer
 from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 
-class TestMqtt(JNTTServer):
+class TestMqtt(JNTTDBServer):
     """Test the common server
     """
     loglevel = logging.DEBUG
