@@ -87,15 +87,6 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
                 logger.exception("[%s] - Exception when retrieving value of loop_sleep. Use default value instead", self.__class__.__name__)
         self.network = DhcpNetwork(self._stopevent, self.options, is_primary=True, is_secondary=False, do_heartbeat_dispatch=True)
 
-    def _get_egg_path(self):
-        """Return the egg path of the module. Must be redefined in server class. Used to find alembic migration scripts.
-        """
-        try:
-            _dist = get_distribution('janitoo_dhcp')
-            return _dist.__file__
-        except AttributeError:
-            return os.path.join("/opt/janitoo/src",'janitoo_dhcp/src/config')
-
     def start(self):
         """Start the DHCP Server
         """
