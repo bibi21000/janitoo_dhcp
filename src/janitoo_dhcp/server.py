@@ -66,14 +66,16 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
     def __init__(self, options):
         """
         """
+        self.network = None
+        self.lease_mgr = None
+        self.mqtt_resolv = None
+        self.mqtt_client = None
+        self.resolv_timer = None
+        self.heartbeat_timer = None
         JNTDBServer.__init__(self, options)
         self.section = "dhcp"
         JNTControllerManager.__init__(self)
-        self.mqtt_resolv = None
-        self.mqtt_client = None
         self.lease_mgr = LeaseManager(self.options)
-        self.resolv_timer = None
-        self.heartbeat_timer = None
         #~ self.uuid = self.options.get_option(self.section, 'uuid')
         #~ if self.uuid == None:
             #~ self.uuid = muuid.uuid1()
