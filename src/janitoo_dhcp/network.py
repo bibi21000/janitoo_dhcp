@@ -30,7 +30,7 @@ __copyright__ = "Copyright © 2013-2014-2015 Sébastien GALLET aka bibi21000"
 
 # Set default logging handler to avoid "No handler found" warnings.
 import logging
-logger = logging.getLogger('janitoo.dhcp')
+logger = logging.getLogger(__name__)
 import threading
 import datetime
 from pkg_resources import iter_entry_points
@@ -49,6 +49,7 @@ class DhcpNetwork(JNTNetwork):
         """
         """
         JNTNetwork.__init__(self, stop_event, options, **kwargs)
+        self.extend_from_entry_points('janitoo_dhcp')
 
     def emit_network(self):
         """Emit a network state event
@@ -66,19 +67,10 @@ class DhcpNetwork(JNTNetwork):
             #~ for key in vals.keys():
                 #~ ret[key]=vals[key]
 
-    def extend_from_entry_points(self):
-        """"Extend the controller with methods found in entrypoints
+    def extend_from_entry_points(self, group):
+        """"Extend the network with methods found in entrypoints
         """
-        private_entry_points = []
-        section = "network"
-        if self.options.get_option(section, 'entry_points') is not None:
-            private_entry_points = self.options.get_option(section, 'entry_points').split(",")
-        for entrypoint in iter_entry_points(group = 'janitoo_web.network'):
+        for entrypoint in iter_entry_points(group = '%s.network'%group):
             logger.info('Extend network with %s', entrypoint.module_name )
             extend = entrypoint.load()
             extend( self )
-        for ep in private_entry_points:
-            for entrypoint in iter_entry_points(group = '%s.network'%ep):
-                logger.info('Extend network with private %s', entrypoint.module_name )
-                extend = entrypoint.load()
-                extend( self )

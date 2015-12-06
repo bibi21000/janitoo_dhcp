@@ -26,7 +26,7 @@ __copyright__ = "Copyright © 2013-2014-2015 Sébastien GALLET aka bibi21000"
 
 # Set default logging handler to avoid "No handler found" warnings.
 import logging
-logger = logging.getLogger('janitoo.dhcp')
+logger = logging.getLogger(__name__)
 import os, sys
 import threading
 import uuid as muuid
@@ -121,7 +121,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         #[SQL: u'SELECT dhcpd_lease.add_ctrl AS dhcpd_lease_add_ctrl, dhcpd_lease.add_node AS dhcpd_lease_add_node, dhcpd_lease.name AS dhcpd_lease_name, dhcpd_lease.location AS dhcpd_lease_location, dhcpd_lease.cmd_classes AS dhcpd_lease_cmd_classes, dhcpd_lease.state AS dhcpd_lease_state, dhcpd_lease.last_seen AS dhcpd_lease_last_seen \nFROM dhcpd_lease'] [parameters: [immutabledict({})]]
         #self.lease_mgr.start(self.dbsession)
         #Use a new session for the lease
-        self.lease_mgr.start(self.dbsession)
+        self.lease_mgr.start(self.create_session())
         JNTControllerManager.start_controller_timer(self)
 
     def resolv_heartbeat(self):
@@ -163,12 +163,6 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         """Stop the DHCP Server
         """
         logger.info("Stop the server")
-        self.network.stop()
-        self.lease_mgr.stop()
-        maxi = 1
-        while maxi<10 and not self.network.is_stopped:
-            self._stopevent.wait(self.loop_sleep*10)
-            maxi += self.loop_sleep*10
         if self.heartbeat_timer is not None:
             #The manager is started
             self.heartbeat_timer.cancel()
@@ -177,10 +171,12 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             #The manager is started
             self.resolv_timer.cancel()
             self.resolv_timer = None
+        JNTControllerManager.stop_controller_timer(self)
+        self.network.stop()
+        self.lease_mgr.stop()
         if self.mqtt_resolv is not None:
             self.mqtt_resolv.stop()
             self.mqtt_resolv = None
-        JNTControllerManager.stop_controller_timer(self)
         JNTControllerManager.stop_controller(self)
         if self.mqtt_client is not None:
             self.mqtt_client.stop()
@@ -195,6 +191,10 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             self.mqtt_client.remove_topic(topic='/dhcp/resolv/name')
             self.mqtt_client.remove_topic(topic='/dhcp/resolv/cmd_classes')
             self.mqtt_client = None
+        maxi = 1
+        while maxi<10 and not self.network.is_stopped:
+            self._stopevent.wait(self.loop_sleep*10)
+            maxi += self.loop_sleep*10
         JNTDBServer.stop(self)
         logger.info("Server stopped")
 
