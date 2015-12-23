@@ -27,7 +27,6 @@ import sys, os
 import time, datetime
 import unittest
 import threading
-import logging
 import mock
 import uuid
 
