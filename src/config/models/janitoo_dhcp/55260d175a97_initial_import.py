@@ -26,7 +26,9 @@ def upgrade():
     sa.Column('cmd_classes', sa.String(length=250), nullable=False),
     sa.Column('state', sa.String(length=10), nullable=False),
     sa.Column('last_seen', sa.DateTime(), nullable=True),
-    sa.PrimaryKeyConstraint('add_ctrl', 'add_node', name='dhcp_leases_primary')
+    sa.PrimaryKeyConstraint('add_ctrl', 'add_node', name='dhcp_leases_primary'),
+    sa.UniqueConstraint('add_ctrl', name="dhcp_leases_primary_add_ctrl"),
+    sa.UniqueConstraint('add_node', name="dhcp_leases_primary_add_node"),
     )
     op.create_table('dhcp_leases_param',
     sa.Column('add_ctrl', sa.Integer(), nullable=False),

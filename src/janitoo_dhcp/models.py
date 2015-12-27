@@ -54,6 +54,8 @@ def extend( jntmodel ):
                             )
         __table_args__ = (
             sa.PrimaryKeyConstraint('add_ctrl', 'add_node', name="dhcp_leases_primary"),
+            sa.UniqueConstraint('add_ctrl', name="dhcp_leases_primary_add_ctrl"),
+            sa.UniqueConstraint('add_node', name="dhcp_leases_primary_add_node"),
                          )
         def classes(self):
             """
