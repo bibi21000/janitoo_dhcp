@@ -54,8 +54,6 @@ def extend( jntmodel ):
                             )
         __table_args__ = (
             sa.PrimaryKeyConstraint('add_ctrl', 'add_node', name="dhcp_leases_primary"),
-            sa.UniqueConstraint('add_ctrl', name="dhcp_leases_primary_add_ctrl"),
-            sa.UniqueConstraint('add_node', name="dhcp_leases_primary_add_node"),
                          )
         def classes(self):
             """
@@ -75,10 +73,6 @@ def extend( jntmodel ):
         add_node = sa.Column(sa.Integer, sa.ForeignKey('dhcp_leases.add_node'))
         key = sa.Column(sa.String(50), nullable=False)
         value = sa.Column(sa.String(250), nullable=False)
-        lease = relationship( "Lease",
-                                primaryjoin="and_(Lease.add_ctrl==LeaseParam.add_ctrl, Lease.add_node==LeaseParam.add_node)",
-                                backref=backref('lease', cascade="save-update, merge, delete, delete-orphan" )
-                            )
         __table_args__ = (
             sa.PrimaryKeyConstraint('add_ctrl', 'add_node', 'key', name="dhcp_leases_param_primary"),
             sa.ForeignKeyConstraint( ['add_ctrl', 'add_node'],
