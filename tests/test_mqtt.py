@@ -41,7 +41,6 @@ from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 class TestMqtt(JNTTDBServer):
     """Test the common server
     """
-    loglevel = logging.DEBUG
     path = '/tmp/janitoo_test'
     broker_user = 'toto'
     broker_password = 'toto'

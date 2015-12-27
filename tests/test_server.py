@@ -55,7 +55,6 @@ assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
     """Test the server
     """
-    loglevel = logging.DEBUG
     path = '/tmp/janitoo_test'
     broker_user = 'toto'
     broker_password = 'toto'
