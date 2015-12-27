@@ -9,5 +9,4 @@
 dependencies:
     pre:
         - make deps
-        - make db-deps
         - make travis-deps
