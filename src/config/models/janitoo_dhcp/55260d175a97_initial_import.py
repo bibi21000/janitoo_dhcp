@@ -34,8 +34,6 @@ def upgrade():
     sa.Column('key', sa.String(length=50), nullable=False),
     sa.Column('value', sa.String(length=250), nullable=False),
     sa.ForeignKeyConstraint(['add_ctrl', 'add_node'], ['dhcp_leases.add_ctrl', 'dhcp_leases.add_node'], name='dhcp_leases_param_foreign_lease'),
-    sa.ForeignKeyConstraint(['add_ctrl'], ['dhcp_leases.add_ctrl'], ),
-    sa.ForeignKeyConstraint(['add_node'], ['dhcp_leases.add_node'], ),
     sa.PrimaryKeyConstraint('add_ctrl', 'add_node', 'key', name='dhcp_leases_param_primary')
     )
     ### end Alembic commands ###
