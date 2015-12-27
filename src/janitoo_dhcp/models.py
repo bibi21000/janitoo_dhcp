@@ -69,8 +69,8 @@ def extend( jntmodel ):
         __tablename__ = 'dhcp_leases_param'
         # Here we define columns for the table address.
         # Notice that each column is also a normal Python instance attribute.
-        add_ctrl = sa.Column(sa.Integer, sa.ForeignKey('dhcp_leases.add_ctrl'))
-        add_node = sa.Column(sa.Integer, sa.ForeignKey('dhcp_leases.add_node'))
+        add_ctrl = sa.Column(sa.Integer)
+        add_node = sa.Column(sa.Integer)
         key = sa.Column(sa.String(50), nullable=False)
         value = sa.Column(sa.String(250), nullable=False)
         __table_args__ = (
