@@ -131,8 +131,6 @@ class LeaseManager(object):
                     return None
                 add_node = max_node + 1
             return self.repair_lease(add_ctrl, add_node, options)
-        except:
-            raise
         finally:
             self._new_lease_lock.release()
 

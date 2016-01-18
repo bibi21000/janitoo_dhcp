@@ -57,6 +57,8 @@ assert(COMMAND_DESC[COMMAND_CONTROLLER] == 'COMMAND_CONTROLLER')
 assert(COMMAND_DESC[COMMAND_DHCPD] == 'COMMAND_DHCPD')
 ##############################################################
 
+exit()
+
 class DHCPServer(JNTDBServer, JNTControllerManager):
     """The Dynamic Home Configuration Protocol Server
 
@@ -86,6 +88,14 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             except:
                 logger.exception("[%s] - Exception when retrieving value of loop_sleep. Use default value instead", self.__class__.__name__)
         self.network = DhcpNetwork(self._stopevent, self.options, is_primary=True, is_secondary=False, do_heartbeat_dispatch=True)
+
+    def __del__(self):
+        """
+        """
+        try:
+            self.stop()
+        except:
+            logger.debug("[%s] - Catched exception", self.__class__.__name__)
 
     def start(self):
         """Start the DHCP Server
@@ -144,9 +154,9 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         """Reload the server
         """
         logger.info("[%s] - Reload the server", self.__class__.__name__)
-        self.stop()
-        time.sleep(1.0)
-        self.start()
+        #~ self.stop()
+        #~ time.sleep(1.0)
+        #~ self.start()
 
     def start_threads(self):
         """Start the threads associated to this server.
@@ -172,8 +182,10 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             self.resolv_timer.cancel()
             self.resolv_timer = None
         JNTControllerManager.stop_controller_timer(self)
-        self.network.stop()
-        self.lease_mgr.stop()
+        if self.network is not None:
+            self.network.stop()
+        if self.lease_mgr is not None:
+            self.lease_mgr.stop()
         if self.mqtt_resolv is not None:
             self.mqtt_resolv.stop()
             self.mqtt_resolv = None
