@@ -52,6 +52,7 @@ COMMAND_DISCOVERY = 0x5000
 assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
+exit()
 class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
     """Test the server
     """

@@ -57,8 +57,6 @@ assert(COMMAND_DESC[COMMAND_CONTROLLER] == 'COMMAND_CONTROLLER')
 assert(COMMAND_DESC[COMMAND_DHCPD] == 'COMMAND_DHCPD')
 ##############################################################
 
-exit()
-
 class DHCPServer(JNTDBServer, JNTControllerManager):
     """The Dynamic Home Configuration Protocol Server
 
