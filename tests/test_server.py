@@ -157,6 +157,7 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
         self.stop()
 
     def test_120_dhcp_cache_remove(self):
+        self.wipTest()
         self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
@@ -183,6 +184,7 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
         self.stop()
 
     def test_140_dhcp_remove_lease(self):
+        self.wipTest()
         self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
