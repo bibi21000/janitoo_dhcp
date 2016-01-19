@@ -52,8 +52,9 @@ COMMAND_DISCOVERY = 0x5000
 assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
-exit()
-class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
+
+#~ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
+class TetDhcpSerser():
     """Test the server
     """
     path = '/tmp/janitoo_test'
