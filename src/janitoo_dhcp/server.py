@@ -73,19 +73,6 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         self.section = "dhcp"
         JNTDBServer.__init__(self, options)
         JNTControllerManager.__init__(self)
-        self.lease_mgr = LeaseManager(self.options)
-        #~ self.uuid = self.options.get_option(self.section, 'uuid')
-        #~ if self.uuid == None:
-            #~ self.uuid = muuid.uuid1()
-            #~ self.options.set_option(self.section, 'uuid', '%s'%self.uuid)
-        self.loop_sleep = 0.25
-        loop_sleep = self.options.get_option('system','loop_sleep')
-        if loop_sleep is not None:
-            try:
-                self.loop_sleep = int(loop_sleep)
-            except:
-                logger.exception("[%s] - Exception when retrieving value of loop_sleep. Use default value instead", self.__class__.__name__)
-        self.network = DhcpNetwork(self._stopevent, self.options, is_primary=True, is_secondary=False, do_heartbeat_dispatch=True)
 
     def __del__(self):
         """
@@ -99,6 +86,19 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         """Start the DHCP Server
         """
         logger.info("Start the server")
+        self.lease_mgr = LeaseManager(self.options)
+        #~ self.uuid = self.options.get_option(self.section, 'uuid')
+        #~ if self.uuid == None:
+            #~ self.uuid = muuid.uuid1()
+            #~ self.options.set_option(self.section, 'uuid', '%s'%self.uuid)
+        self.loop_sleep = 0.25
+        loop_sleep = self.options.get_option('system','loop_sleep')
+        if loop_sleep is not None:
+            try:
+                self.loop_sleep = int(loop_sleep)
+            except:
+                logger.exception("[%s] - Exception when retrieving value of loop_sleep. Use default value instead", self.__class__.__name__)
+        self.network = DhcpNetwork(self._stopevent, self.options, is_primary=True, is_secondary=False, do_heartbeat_dispatch=True)
         JNTDBServer.start(self)
         JNTControllerManager.start_controller(self, self.section, self.options, cmd_classes=[COMMAND_DHCPD], hadd=None, name="DHCP Server",
             product_name="DHCP Server", product_type="DHCP Server")
@@ -129,7 +129,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         #[SQL: u'SELECT dhcpd_lease.add_ctrl AS dhcpd_lease_add_ctrl, dhcpd_lease.add_node AS dhcpd_lease_add_node, dhcpd_lease.name AS dhcpd_lease_name, dhcpd_lease.location AS dhcpd_lease_location, dhcpd_lease.cmd_classes AS dhcpd_lease_cmd_classes, dhcpd_lease.state AS dhcpd_lease_state, dhcpd_lease.last_seen AS dhcpd_lease_last_seen \nFROM dhcpd_lease'] [parameters: [immutabledict({})]]
         #self.lease_mgr.start(self.dbsession)
         #Use a new session for the lease
-        self.lease_mgr.start(self.create_session())
+        self.lease_mgr.start(self.create_session(), self.network.heartbeat_cache)
         JNTControllerManager.start_controller_timer(self)
 
     def resolv_heartbeat(self):
@@ -152,9 +152,9 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         """Reload the server
         """
         logger.info("[%s] - Reload the server", self.__class__.__name__)
-        #~ self.stop()
-        #~ time.sleep(1.0)
-        #~ self.start()
+        self.stop()
+        time.sleep(1.0)
+        self.start()
 
     def start_threads(self):
         """Start the threads associated to this server.
@@ -206,6 +206,8 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             self._stopevent.wait(self.loop_sleep*10)
             maxi += self.loop_sleep*10
         JNTDBServer.stop(self)
+        self.network = None
+        self.lease_mgr = None
         logger.info("Server stopped")
 
     def start_threads(self):

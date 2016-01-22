@@ -54,7 +54,6 @@ class TestMqtt(JNTTDBServer):
         self.payload=json_loads(message.payload)
 
     def test_100_dhcp_heartbeat_bad(self):
-        self.start()
         self.topic = "/dhcp/heartbeat"
         self.mqttc.publish(self.topic, 'ONLINE')
         self.mqttc.publish(self.topic+'/', 'ONLINE')
@@ -66,11 +65,8 @@ class TestMqtt(JNTTDBServer):
         self.mqttc.publish(self.topic, json_dumps(msg))
         msg = {'add_ctrl':None, 'add_node':None}
         self.mqttc.publish(self.topic, json_dumps(msg))
-        time.sleep(1)
-        self.stop()
 
     def test_101_dhcp_lease_lock_bad(self):
-        self.start()
         uuid = self.mqttc.subscribe_reply(callback=self.on_message)
         msg = {'rep_uuid' : uuid, 'add_ctrl':'a', 'add_node':'a'}
         self.mqttc.publish("/dhcp/lease/lock", json_dumps(msg))
@@ -92,11 +88,8 @@ class TestMqtt(JNTTDBServer):
         self.mqttc.unsubscribe_reply(uuid)
         print self.payload
         self.assertEqual(self.payload['msg_status'], 400)
-        time.sleep(1)
-        self.stop()
 
     def test_110_dhcp_lease_new_release_remove(self):
-        self.start()
         self.topic = "/dhcp/lease/new"
         uuid = self.mqttc.subscribe_reply(callback=self.on_message)
         msg = {'rep_uuid' : uuid, 'add_ctrl':-1, 'add_node':-1,'options' : {'name':'test', 'location':'location_test'}}
@@ -190,11 +183,8 @@ class TestMqtt(JNTTDBServer):
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
-        time.sleep(1)
-        self.stop()
 
     def test_111_dhcp_lease_new_release_lock_release(self):
-        self.start()
         self.topic = "/dhcp/lease/new"
         uuid = self.mqttc.subscribe_reply(callback=self.on_message)
         msg = {'rep_uuid' : uuid, 'add_ctrl':-1, 'add_node':-1,'options' : {'name':'test', 'location':'location_test'}}
@@ -256,11 +246,8 @@ class TestMqtt(JNTTDBServer):
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
         self.assertEqual(self.payload['state'], 'OFFLINE')
-        time.sleep(1)
-        self.stop()
 
     def test_120_dhcp_lease_repair(self):
-        self.start()
         self.topic = "/dhcp/lease/repair"
         uuid = self.mqttc.subscribe_reply(callback=self.on_message)
         msg = {'rep_uuid' : uuid, 'add_ctrl':11, 'add_node':1,'options' : {'name':'test', 'location':'location_test'}}
@@ -274,6 +261,4 @@ class TestMqtt(JNTTDBServer):
         self.assertEqual(self.payload['add_ctrl'], 11)
         self.assertEqual(self.payload['add_node'], 1)
         self.mqttc.publish_heartbeat(self.payload['add_ctrl'], self.payload['add_node'])
-        time.sleep(1)
-        self.stop()
 

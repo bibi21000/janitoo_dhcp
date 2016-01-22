@@ -38,7 +38,7 @@ import sqlalchemy as sa
 from sqlalchemy import func
 from sqlalchemy.sql import and_, exists, or_
 
-from janitoo.dhcp import HeartbeatMessage, CacheManager, leases_states, check_heartbeats
+#~ from janitoo.dhcp import HeartbeatMessage, CacheManager, leases_states, check_heartbeats
 from janitoo.utils import HADD
 from janitoo_db.helpers import saobject_to_dict
 import janitoo_db.models as jntmodel
@@ -67,9 +67,9 @@ class LeaseManager(object):
         self.heartbeat_count = int(options.data["heartbeat_count"]) if "heartbeat_count" in options.data else 3
         self.heartbeat_dead = int(options.data["heartbeat_dead"]) if "heartbeat_dead" in options.data else 604800
         self._new_lease_lock = threading.Lock()
-        self._cachemgr = CacheManager()
+        self._cachemgr = None
 
-    def start(self, dbsession):
+    def start(self, dbsession, cache):
         """Start the lease manager in db mode
 
         :param extras: The extra inforamtions to add
@@ -78,8 +78,8 @@ class LeaseManager(object):
         :rtype: dict()
         """
         #Initialise the cache
+        self._cachemgr = cache
         self.dbsession = dbsession
-        self._cachemgr.start(self.dbsession.query(jntmodel.Lease).filter(jntmodel.Lease.state!="DEAD", jntmodel.Lease.state!="OFFLINE"))
 
     def stop(self):
         """Stop the lease manager
@@ -97,7 +97,8 @@ class LeaseManager(object):
         self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))
         self.dbsession.commit()
         self.dbsession.expunge_all()
-        self._cachemgr = CacheManager()
+        self.dbsession = None
+        self._cachemgr = None
 
     def new_lease(self, add_ctrl, add_node, options):
         """Get a new lease
