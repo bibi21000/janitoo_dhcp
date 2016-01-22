@@ -262,7 +262,6 @@ class LeaseManager(object):
             res[HADD%(line.add_ctrl, line.add_node)] = saobject_to_dict(line)
         return res
 
-
     def resolv_cmd_classes(self, cmd_classes=[]):
         """Resolv a cmd_classes to lease(s)
 
@@ -322,7 +321,10 @@ class LeaseManager(object):
         :type add_node: Integer
         """
         #~ print "Update heartbeat here"
-        self._cachemgr.update(add_ctrl, add_node, state=state, last_seen=datetime.datetime.now())
+        try:
+            self._cachemgr.update(add_ctrl, add_node, state=state, last_seen=datetime.datetime.now())
+        except:
+            logger.exception('Catched exception')
 
     def check_heartbeat(self, session=None):
         """Check the states of the machine. Must be called in a timer
@@ -331,7 +333,10 @@ class LeaseManager(object):
         :param session: the session to use to communicate with db. May be a scoped_session if used in a separate tread. If None, use the common session.
         :type session: sqlalchemy session
         """
-        self._cachemgr.check_heartbeats(heartbeat_timeout=self.heartbeat_timeout, heartbeat_count=self.heartbeat_count, heartbeat_dead=self.heartbeat_dead)
-        self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))
-        self.dbsession.commit()
-        self.dbsession.expunge_all()
+        try:
+            self._cachemgr.check_heartbeats(heartbeat_timeout=self.heartbeat_timeout, heartbeat_count=self.heartbeat_count, heartbeat_dead=self.heartbeat_dead)
+            self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))
+            self.dbsession.commit()
+            self.dbsession.expunge_all()
+        except:
+            logger.exception('Catched exception')

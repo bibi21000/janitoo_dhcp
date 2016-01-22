@@ -47,6 +47,16 @@ class TestMqtt(JNTTDBServer):
     server_class = DHCPServer
     server_conf = "tests/data/janitoo_dhcp.conf"
 
+    def setUp(self):
+        JNTTDBServer.setUp(self)
+        self.start()
+        time.sleep(12)
+
+    def tearDown(self):
+        time.sleep(1)
+        self.stop()
+        JNTTDBServer.tearDown(self)
+
     def on_message(self, client, userdata, message):
         """On generic message
         """
