@@ -42,6 +42,8 @@ from janitoo.utils import TOPIC_VALUES_USER, TOPIC_VALUES_CONFIG, TOPIC_VALUES_S
 
 from janitoo_dhcp.server import DHCPServer
 
+from . import DhcpCommon
+
 ##############################################################
 #Check that we are in sync with the official command classes
 #Must be implemented for non-regression
@@ -53,15 +55,14 @@ assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
 
-class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
-#~ class TetDhcpSerser():
+class TestDhcpDb(DhcpCommon, JNTTDBServer, JNTTDBServerCommon):
+    """Test the server db
+    """
+    pass
+
+class TestDhcpSerser(DhcpCommon, JNTTDBServer):
     """Test the server
     """
-    path = '/tmp/janitoo_test'
-    broker_user = 'toto'
-    broker_password = 'toto'
-    server_class = DHCPServer
-    server_conf = "tests/data/janitoo_dhcp.conf"
 
     def setUp(self):
         JNTTDBServer.setUp(self)
@@ -160,7 +161,7 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'ONLINE')
 
     def test_120_dhcp_cache_remove(self):
-        self.wipTest()
+        #~ self.wipTest()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 1, state='ONLINE', last_seen=pastdatetime)
@@ -183,7 +184,7 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
             self.assertTrue(p['value'] in ['other', 'other2'])
 
     def test_140_dhcp_remove_lease(self):
-        self.wipTest()
+        #~ self.wipTest()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
@@ -199,7 +200,6 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
         self.assertEqual(self.server.lease_mgr.resolv_hadd(1, 2), None)
 
     def test_141_dhcp_remove_bad_lease(self):
-        self.wipTest()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
@@ -207,7 +207,6 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
         self.server.lease_mgr.remove_lease(1, -1)
 
     def test_150_dhcp_get_lease_ctrl(self):
-        self.wipTest()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
@@ -232,7 +231,6 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
             self.assertTrue(p['value'] in ['other', 'other2'])
 
     def test_152_dhcp_get_lease_node(self):
-        self.wipTest()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
@@ -267,7 +265,6 @@ class TestDhcpSerser(JNTTDBServer, JNTTDBServerCommon):
             self.assertTrue(p['value'] in ['other', 'other2'])
 
     def test_153_dhcp_get_bad_lease(self):
-        self.wipTest()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(2, 3, options)

@@ -189,7 +189,6 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             self.mqtt_resolv = None
         JNTControllerManager.stop_controller(self)
         if self.mqtt_client is not None:
-            self.mqtt_client.stop()
             self.mqtt_client.unsubscribe(topic='/dhcp/#')
             self.mqtt_client.remove_topic(topic='/dhcp/lease/new')
             self.mqtt_client.remove_topic(topic='/dhcp/lease/repair')
@@ -200,6 +199,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
             self.mqtt_client.remove_topic(topic='/dhcp/resolv/hadd')
             self.mqtt_client.remove_topic(topic='/dhcp/resolv/name')
             self.mqtt_client.remove_topic(topic='/dhcp/resolv/cmd_classes')
+            self.mqtt_client.stop()
             self.mqtt_client = None
         maxi = 1
         while maxi<10 and not self.network.is_stopped:

@@ -38,14 +38,11 @@ from janitoo_nosetests.thread import JNTTThread, JNTTThreadCommon
 from janitoo_dhcp.server import DHCPServer
 from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 
-class TestMqtt(JNTTDBServer):
+from . import DhcpCommon
+
+class TestMqtt(DhcpCommon, JNTTDBServer):
     """Test the common server
     """
-    path = '/tmp/janitoo_test'
-    broker_user = 'toto'
-    broker_password = 'toto'
-    server_class = DHCPServer
-    server_conf = "tests/data/janitoo_dhcp.conf"
 
     def setUp(self):
         JNTTDBServer.setUp(self)
