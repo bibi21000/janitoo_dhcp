@@ -117,7 +117,7 @@ class TestDhcpSerser(DhcpCommon, JNTTDBServer):
         self.assertTrue(1 not in self.server.lease_mgr._cachemgr.entries)
 
     def test_105_dhcp_cache_heartbeat_dead(self):
-        self.wipTest()
+        #~ self.wipTest()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_dead+1)
         self.server.lease_mgr._cachemgr.update(99, 1, state='ONLINE', last_seen=pastdatetime)
