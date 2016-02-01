@@ -2,7 +2,7 @@
     :target: https://travis-ci.org/bibi21000/janitoo_dhcp
     :alt: Travis status
 
-.. image:: https://circleci.com/gh/bibi21000/janitoo_dhcp.png?style=shield&circle-token=ef1e8a7c0d3b90e9873bf5189f0d2eaafca6ff8b
+.. image:: https://circleci.com/gh/bibi21000/janitoo_dhcp.png?style=shield
     :target: https://circleci.com/gh/bibi21000/janitoo_dhcpjanitoo_dhcp
     :alt: Circle status
 
