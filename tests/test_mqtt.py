@@ -41,6 +41,7 @@ from janitoo.utils import json_dumps, json_loads, HADD, HADD_SEP
 from . import DhcpCommon
 
 JNTTDBServer.skipCITest()
+JNTTDBServer.skipDockerTest()
 
 class TestMqtt(DhcpCommon, JNTTDBServer):
     """Test the common server
