@@ -36,13 +36,17 @@ from janitoo.options import JNTOptions
 from janitoo_db.base import Base, create_db_engine
 import janitoo_db.models as jntmodels
 
-class TestModels(JNTTModels):
+class ModelsCommon():
     """Test the models
     """
-    models_conf = "tests/data/janitoo_dhcp.conf"
-
     def test_001_lease(self):
         now = datetime.datetime.now()
         lease = jntmodels.Lease(add_ctrl="0001", add_node='0001', name="name", location="location", state='BOOT', last_seen=now)
         self.dbsession.merge(lease)
         self.dbsession.commit()
+
+class TestModels(JNTTModels, ModelsCommon):
+    """Test the models
+    """
+    models_conf = "tests/data/janitoo_dhcp.conf"
+
