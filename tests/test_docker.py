@@ -45,6 +45,9 @@ from janitoo.utils import HADD_SEP, HADD
 sys.path.insert(0, os.path.abspath('.'))
 
 from test_models import ModelsCommon
-
 #Launch ModelsCommon tests for every supported database
 jntt_docker_models(__name__, ModelsCommon)
+
+from test_server import DhcpServerCommon
+#Launch DhcpServerCommon tests for every supported database
+jntt_docker_dbserver(__name__, DhcpServerCommon)
