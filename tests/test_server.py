@@ -45,6 +45,8 @@ from janitoo.utils import TOPIC_VALUES_USER, TOPIC_VALUES_CONFIG, TOPIC_VALUES_S
 
 from janitoo_dhcp.server import DHCPServer
 
+sys.path.insert(0, os.path.abspath('.'))
+
 from . import DhcpCommon
 
 ##############################################################
@@ -62,19 +64,10 @@ class TestDhcpDb(DhcpCommon, JNTTDBServer, JNTTDBServerCommon):
     """
     pass
 
-class TestDhcpSerser(DhcpCommon, JNTTDBServer):
+class DhcpServerCommon(object):
+
     """Test the server
     """
-
-    def setUp(self):
-        JNTTDBServer.setUp(self)
-        self.start()
-        time.sleep(8)
-
-    def tearDown(self):
-        time.sleep(1)
-        self.stop()
-        JNTTDBServer.tearDown(self)
 
     def test_100_dhcp_cache_heartbeat_online(self):
         #~ self.wipTest()
@@ -313,3 +306,18 @@ class TestDhcpSerser(DhcpCommon, JNTTDBServer):
         res = self.server.lease_mgr.resolv_name(location="kitchen.location")
         print res
         self.assertEqual(len(res), 2)
+
+class TestDhcpSerser(DhcpCommon, JNTTDBServer, DhcpServerCommon):
+    """Test the server
+    """
+
+    def setUp(self):
+        JNTTDBServer.setUp(self)
+        self.start()
+        time.sleep(8)
+
+    def tearDown(self):
+        time.sleep(1)
+        self.stop()
+        JNTTDBServer.tearDown(self)
+

@@ -31,8 +31,10 @@ from janitoo_dhcp.server import DHCPServer
 class DhcpCommon(object):
     """Test the server
     """
+    loglevel = logging.DEBUG
     path = '/tmp/janitoo_test'
     broker_user = 'toto'
     broker_password = 'toto'
     server_class = DHCPServer
     server_conf = "tests/data/janitoo_dhcp.conf"
+    hadds=[HADD%(1,0)]
