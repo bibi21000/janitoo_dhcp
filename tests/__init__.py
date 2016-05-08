@@ -26,6 +26,8 @@ except:
     # bootstrapping
     pass
 
+import logging
+
 from janitoo_dhcp.server import DHCPServer
 
 class DhcpCommon(object):
