@@ -64,7 +64,7 @@ class TestDhcpDb(DhcpCommon, JNTTDBServer, JNTTDBServerCommon):
     """
     pass
 
-class DhcpServerCommon(object):
+class DhcpServerCommon(DhcpCommon):
 
     """Test the server
     """
