@@ -59,7 +59,7 @@ COMMAND_DISCOVERY = 0x5000
 assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
-class TestDhcpDb(DhcpCommon, JNTTDBServer, JNTTDBServerCommon):
+class TestDhcpDb(DhcpCommon, JNTTDBServer):
     """Test the server db
     """
     pass
