@@ -59,11 +59,6 @@ COMMAND_DISCOVERY = 0x5000
 assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
-class TestDhcpDb(DhcpCommon, JNTTDBServer):
-    """Test the server db
-    """
-    pass
-
 class DhcpServerCommon(DhcpCommon):
 
     """Test the server
@@ -307,7 +302,7 @@ class DhcpServerCommon(DhcpCommon):
         print res
         self.assertEqual(len(res), 2)
 
-class TestDhcpSerser(DhcpCommon, JNTTDBServer, DhcpServerCommon):
+class TestDhcpSerser(DhcpCommon, JNTTDBServer):
     """Test the server
     """
 
