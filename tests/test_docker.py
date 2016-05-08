@@ -36,7 +36,7 @@ import logging
 
 from janitoo_nosetests import JNTTBase
 from janitoo_nosetests.dbserver import JNTTDBDockerServerCommon, JNTTDBDockerServer, jntt_docker_dbserver
-from janitoo_nosetests.models import jntt_docker_models, jntt_docker_fulmodels
+from janitoo_nosetests.models import jntt_docker_models, jntt_docker_fullmodels
 
 from janitoo.runner import Runner, jnt_parse_args
 from janitoo.server import JNTServer
@@ -50,7 +50,7 @@ jntt_docker_models(__name__, ModelsCommon)
 
 from test_full_models import CommonFullModels
 #Launch ModelsCommon tests for every supported database
-jntt_docker_fulmodels(__name__, CommonFullModels)
+jntt_docker_fullmodels(__name__, CommonFullModels)
 
 from test_server import DhcpServerCommon
 #Launch DhcpServerCommon tests for every supported database
