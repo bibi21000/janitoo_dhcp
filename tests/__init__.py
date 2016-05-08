@@ -29,6 +29,7 @@ except:
 import logging
 
 from janitoo_dhcp.server import DHCPServer
+from janitoo.utils import HADD_SEP, HADD
 
 class DhcpCommon(object):
     """Test the server
