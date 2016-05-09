@@ -302,7 +302,7 @@ class DhcpServerCommon(DhcpCommon):
         print res
         self.assertEqual(len(res), 2)
 
-class TestDhcpSerser(DhcpServerCommon, JNTTDBServer):
+class TestDhcpSerser(DhcpServerCommon, JNTTDBServer, JNTTDBServerCommon):
     """Test the server
     """
 
