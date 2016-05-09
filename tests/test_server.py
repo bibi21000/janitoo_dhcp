@@ -64,6 +64,9 @@ class DhcpServerCommon(DhcpCommon):
     """Test the server
     """
 
+    def test_020_request_broadcast(self):
+        self.wipTest()
+
     def test_100_dhcp_cache_heartbeat_online(self):
         #~ self.wipTest()
         self.assertHeartbeatNode()
