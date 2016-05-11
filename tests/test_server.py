@@ -69,6 +69,7 @@ class DhcpServerCommon(DhcpCommon):
 
     def test_100_dhcp_cache_heartbeat_online(self):
         #~ self.wipTest()
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 1, state='ONLINE', last_seen=pastdatetime)
@@ -95,6 +96,7 @@ class DhcpServerCommon(DhcpCommon):
             self.server.lease_mgr.check_heartbeat()
 
     def test_101_dhcp_cache_multi(self):
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 0, state='OFFLINE', last_seen=pastdatetime)
@@ -111,6 +113,7 @@ class DhcpServerCommon(DhcpCommon):
 
     def test_105_dhcp_cache_heartbeat_dead(self):
         #~ self.wipTest()
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_dead+1)
         self.server.lease_mgr._cachemgr.update(99, 1, state='ONLINE', last_seen=pastdatetime)
@@ -121,6 +124,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertTrue(99 not in self.server.lease_mgr._cachemgr.entries)
 
     def test_110_dhcp_cache_heartbeat_recevive_in_online(self):
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 1, state='ONLINE', last_seen=pastdatetime)
@@ -134,6 +138,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'ONLINE')
 
     def test_111_dhcp_cache_heartbeat_receive_in_pending(self):
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 1, state='ONLINE', last_seen=pastdatetime)
@@ -155,6 +160,7 @@ class DhcpServerCommon(DhcpCommon):
 
     def test_120_dhcp_cache_remove(self):
         #~ self.wipTest()
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         self.server.lease_mgr._cachemgr.update(1, 1, state='ONLINE', last_seen=pastdatetime)
@@ -163,6 +169,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.len(), 0)
 
     def test_130_dhcp_resolv_add(self):
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
@@ -178,6 +185,7 @@ class DhcpServerCommon(DhcpCommon):
 
     def test_140_dhcp_remove_lease(self):
         #~ self.wipTest()
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
@@ -193,6 +201,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr.resolv_hadd(1, 2), None)
 
     def test_141_dhcp_remove_bad_lease(self):
+        self.start()
         self.assertHeartbeatNode()
         pastdatetime = datetime.datetime.now() - datetime.timedelta(seconds=self.server.lease_mgr.heartbeat_timeout+1)
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
@@ -200,6 +209,7 @@ class DhcpServerCommon(DhcpCommon):
         self.server.lease_mgr.remove_lease(1, -1)
 
     def test_150_dhcp_get_lease_ctrl(self):
+        self.start()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
@@ -224,6 +234,7 @@ class DhcpServerCommon(DhcpCommon):
             self.assertTrue(p['value'] in ['other', 'other2'])
 
     def test_152_dhcp_get_lease_node(self):
+        self.start()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
@@ -258,12 +269,14 @@ class DhcpServerCommon(DhcpCommon):
             self.assertTrue(p['value'] in ['other', 'other2'])
 
     def test_153_dhcp_get_bad_lease(self):
+        self.start()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(2, 3, options)
         self.assertEqual(res, None)
 
     def test_160_dhcp_resolv_cmd_classes(self):
+        self.start()
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x1050','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
@@ -285,6 +298,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(len(res), 4)
 
     def test_170_dhcp_resolv_name(self):
+        self.start()
         self.assertHeartbeatNode()
         options={'name':'name1','location':'location','cmd_classes':'0x1050','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
