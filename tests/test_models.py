@@ -42,6 +42,7 @@ class ModelsCommon(JNTTModelsCommon):
     models_conf = "tests/data/janitoo_dhcp.conf"
 
     def test_101_lease(self):
+        self.create_all()
         now = datetime.datetime.now()
         lease = jntmodels.Lease(add_ctrl="0001", add_node='0001', name="name", location="location", state='BOOT', last_seen=now)
         self.dbsession.merge(lease)
