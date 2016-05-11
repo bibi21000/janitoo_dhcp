@@ -322,4 +322,4 @@ class DhcpServerCommon(DhcpCommon):
 class TestDhcpSerser(JNTTDBServerCommon, DhcpServerCommon, JNTTDBServer ):
     """Test the server
     """
-
+    pass
