@@ -5,6 +5,9 @@ python:
   # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
   # maintainers to fix their pypy-dev package.
   # - "pypy"
+services:
+  - mysql
+  - postgresql
 # command to install dependencies
 before_install:
   - sudo apt-get update -qq
@@ -13,6 +16,12 @@ install:
   - make directories
   - make travis-deps
   - python setup.py install
+before_script:
+  - mysql -e 'create database janitoo_tests;'
+  - mysqladmin -u root password janitoo
+  - createdb -U postgres --encoding utf-8 --template template0 janitoo_tests
+  - psql -U postgres --command "CREATE USER janitoo WITH PASSWORD 'janitoo';" janitoo_tests
+  - psql -U postgres --command "GRANT ALL PRIVILEGES ON DATABASE janitoo_tests TO janitoo;" janitoo_tests
 # command to run tests
 script:
  - make tests
