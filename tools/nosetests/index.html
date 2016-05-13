@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Unit Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: medium solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: thin solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+--></script>
+
+<div class='heading'>
+<h1>Unit Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-04-01 15:39:06</p>
+<p class='attribute'><strong>Duration:</strong> 0:16:22.978322</p>
+<p class='attribute'><strong>Status:</strong> Pass 23 Failure 3 Error 4</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>tests.test_server:TestDhcpSerser: Test the server</td>
+    <td>11:41.06</td>
+    <td>15</td>
+    <td>11</td>
+    <td>3</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',15)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_100_dhcp_cache_heartbeat_online</div></td>
+    <td>49.04</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_101_dhcp_cache_multi</div></td>
+    <td>49.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_105_dhcp_cache_heartbeat_dead</div></td>
+    <td>38.02</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.3', 'test_105_dhcp_cache_heartbeat_dead')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.3'] = 'Waiting for None\nHADD : 1/0 = ONLINE\n{1: {0: {\'count\': 0, \'heartbeat\': 33.0, \'state\': \'ONLINE\', \'last_seen\': datetime.datetime(2016, 4, 1, 15, 46, 17, 857556)}}, 99: {1: {\'count\': 2, \'heartbeat\': 33.0, \'state\': \'DEAD\', \'last_seen\': datetime.datetime(2016, 3, 25, 15, 46, 17, 97569)}}}\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/tests/test_server.py\", line 133, in test_105_dhcp_cache_heartbeat_dead\n    self.assertTrue(99 not in self.server.lease_mgr._cachemgr.entries)\n  File \"/usr/lib/python2.7/unittest/case.py\", line 424, in assertTrue\n    raise self.failureException(msg)\nAssertionError: False is not true\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\nHADD : 1/0 = ONLINE\n{1: {0: {\'count\': 0, \'heartbeat\': 33.0, \'state\': \'ONLINE\', \'last_seen\': datetime.datetime(2016, 4, 1, 15, 46, 17, 857556)}}, 99: {1: {\'count\': 2, \'heartbeat\': 33.0, \'state\': \'DEAD\', \'last_seen\': datetime.datetime(2016, 3, 25, 15, 46, 17, 97569)}}}\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_110_dhcp_cache_heartbeat_recevive_in_online</div></td>
+    <td>49.05</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_111_dhcp_cache_heartbeat_receive_in_pending</div></td>
+    <td>49.02</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_120_dhcp_cache_remove</div></td>
+    <td>38.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.6', 'test_120_dhcp_cache_remove')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.6'] = 'Waiting for None\nHADD : 1/0 = ONLINE\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/tests/test_server.py\", line 175, in test_120_dhcp_cache_remove\n    self.assertEqual(self.server.lease_mgr._cachemgr.len(), 0)\n  File \"/usr/lib/python2.7/unittest/case.py\", line 515, in assertEqual\n    assertion_func(first, second, msg=msg)\n  File \"/usr/lib/python2.7/unittest/case.py\", line 508, in _baseAssertEqual\n    raise self.failureException(msg)\nAssertionError: 1 != 0\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\nHADD : 1/0 = ONLINE\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_130_dhcp_resolv_add</div></td>
+    <td>49.05</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_140_dhcp_remove_lease</div></td>
+    <td>39.04</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.8', 'test_140_dhcp_remove_lease')">fail</a>
+<script language="javascript" type="text/javascript">output_list['ft1.8'] = 'Waiting for None\nHADD : 1/0 = ONLINE\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/tests/test_server.py\", line 200, in test_140_dhcp_remove_lease\n    self.server.lease_mgr.remove_lease(1, 3)\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/src/janitoo_dhcp/lease.py\", line 233, in remove_lease\n    self.dbsession.commit()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/scoping.py\", line 150, in do\n    return getattr(self.registry(), name)(*args, **kwargs)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 790, in commit\n    self.transaction.commit()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 392, in commit\n    self._prepare_impl()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 372, in _prepare_impl\n    self.session.flush()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 2004, in flush\n    self._flush(objects)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 2122, in _flush\n    transaction.rollback(_capture_exception=True)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/util/langhelpers.py\", line 60, in __exit__\n    compat.reraise(exc_type, exc_value, exc_tb)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 2086, in _flush\n    flush_context.execute()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py\", line 373, in execute\n    rec.execute(self)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py\", line 485, in execute\n    self.dependency_processor.process_deletes(uow, states)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/dependency.py\", line 530, in process_deletes\n    uowcommit, False)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/dependency.py\", line 575, in _synchronize\n    sync.clear(dest, self.mapper, self.prop.synchronize_pairs)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/sync.py\", line 74, in clear\n    (r, orm_util.state_str(dest))\nAssertionError: Dependency rule tried to blank-out primary key column \'dhcp_leases_param.add_ctrl\' on instance \'\x3CLeaseParam at 0x2aced7716910\x3E\'\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\nHADD : 1/0 = ONLINE\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test_140_dhcp_remove_lease</div></td>
+    <td>40.04</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft1.9', 'test_140_dhcp_remove_lease')">error</a>
+<script language="javascript" type="text/javascript">output_list['ft1.9'] = 'Traceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 360, in run\n    self.tearDown()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/tests/test_server.py\", line 79, in tearDown\n    self.stop()\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 152, in stop\n    self.stopServer()\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 137, in stopServer\n    self.server.stop()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/src/janitoo_dhcp/server.py\", line 186, in stop\n    self.lease_mgr.stop()\n  File \"/home/sebastien/devel/janitoo/janitoo_dhcp/src/janitoo_dhcp/lease.py\", line 97, in stop\n    self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))\n  File \"/home/sebastien/devel/janitoo/janitoo/src/janitoo/dhcp.py\", line 116, in flush\n    data = query.all()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py\", line 2399, in all\n    return list(self)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py\", line 2516, in __iter__\n    return self._execute_and_instances(context)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py\", line 2529, in _execute_and_instances\n    close_with_result=True)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/query.py\", line 2520, in _connection_from_session\n    **kw)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 882, in connection\n    execution_options=execution_options)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 887, in _connection_for_bind\n    engine, execution_options)\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 313, in _connection_for_bind\n    self._assert_active()\n  File \"/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py\", line 214, in _assert_active\n    % self._rollback_exception\nInvalidRequestError: This Session\'s transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: Dependency rule tried to blank-out primary key column \'dhcp_leases_param.add_ctrl\' on instance \'\x3CLeaseParam at 0x2aced7716910\x3E\'\n';</script>
+</td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_141_dhcp_remove_bad_lease</div></td>
+    <td>48.09</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_150_dhcp_get_lease_ctrl</div></td>
+    <td>49.05</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_152_dhcp_get_lease_node</div></td>
+    <td>49.06</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_153_dhcp_get_bad_lease</div></td>
+    <td>49.06</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_160_dhcp_resolv_cmd_classes</div></td>
+    <td>49.07</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_170_dhcp_resolv_name</div></td>
+    <td>50.08</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.test_mqtt:TestMqtt: Test the common server</td>
+    <td>2:19.06</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',5)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_100_dhcp_heartbeat_bad</div></td>
+    <td>27.02</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_101_dhcp_lease_lock_bad</div></td>
+    <td>27.01</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_110_dhcp_lease_new_release_remove</div></td>
+    <td>28.02</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_111_dhcp_lease_new_release_lock_release</div></td>
+    <td>27.07</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_120_dhcp_lease_repair</div></td>
+    <td>29.03</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>tests.test_server:TestDhcpDb: Test the server db</td>
+    <td>2:14.04</td>
+    <td>6</td>
+    <td>3</td>
+    <td>0</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c3',6)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_010_start_heartbeat_stop</div></td>
+    <td>53.04</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_011_start_reload_stop</div></td>
+    <td>14.00</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft3.2', 'test_011_start_reload_stop')">error</a>
+<script language="javascript" type="text/javascript">output_list['ft3.2'] = 'Waiting for None\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 402, in test_011_start_reload_stop\n    self.assertHeartbeatNodes(hadds=self.hadds)\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 230, in assertHeartbeatNodes\n    self.heartbeat_waitings = list(hadds)\nTypeError: \'NoneType\' object is not iterable\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft3.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_012_start_reload_threads_stop</div></td>
+    <td>14.02</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft3.3', 'test_012_start_reload_threads_stop')">error</a>
+<script language="javascript" type="text/javascript">output_list['ft3.3'] = 'Waiting for None\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 414, in test_012_start_reload_threads_stop\n    self.assertHeartbeatNodes(hadds=self.hadds)\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 230, in assertHeartbeatNodes\n    self.heartbeat_waitings = list(hadds)\nTypeError: \'NoneType\' object is not iterable\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='ft3.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_040_server_start_no_error_in_log</div></td>
+    <td>4.03</td>
+    <td colspan='5' align='center'><a href="javascript:showOutput('ft3.4', 'test_040_server_start_no_error_in_log')">error</a>
+<script language="javascript" type="text/javascript">output_list['ft3.4'] = 'Waiting for None\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/unittest/case.py\", line 331, in run\n    testMethod()\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 454, in test_040_server_start_no_error_in_log\n    self.assertHeartbeatNodes(hadds=self.hadds)\n  File \"/home/sebastien/devel/janitoo/janitoo_nosetests/src/janitoo_nosetests/server.py\", line 230, in assertHeartbeatNodes\n    self.heartbeat_waitings = list(hadds)\nTypeError: \'NoneType\' object is not iterable\n-------------------- \x3E\x3E begin captured stdout \x3C\x3C ---------------------\nWaiting for None\n\n--------------------- \x3E\x3E end captured stdout \x3C\x3C ----------------------\n';</script>
+</td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_051_dbserver_no_auto_migrate</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_052_dbserver_auto_migrate</div></td>
+    <td>48.02</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.test_full_models:TestFullModels: Test the full model</td>
+    <td>7.01</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_upgrade</div></td>
+    <td>2.07</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_002_downgrade</div></td>
+    <td>4.04</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.test_models:TestModels: Test the models</td>
+    <td>1.02</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_lease</div></td>
+    <td>1.02</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>tests.test_package:TestPackage: Test the package</td>
+    <td>0.00</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_check_package</div></td>
+    <td>0.00</td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>16:24.01</td>
+    <td>30</td>
+    <td>23</td>
+    <td>3</td>
+    <td>4</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
