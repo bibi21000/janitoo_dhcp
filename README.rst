@@ -3,12 +3,20 @@
     :alt: Travis status
 
 .. image:: https://circleci.com/gh/bibi21000/janitoo_dhcp.png?style=shield
-    :target: https://circleci.com/gh/bibi21000/janitoo_dhcpjanitoo_dhcp
+    :target: https://circleci.com/gh/bibi21000/janitoo_dhcp
     :alt: Circle status
 
 .. image:: https://coveralls.io/repos/bibi21000/janitoo_dhcp/badge.svg?branch=master&service=github
     :target: https://coveralls.io/github/bibi21000/janitoo_dhcp?branch=master
     :alt: Coveralls results
+
+.. image:: https://landscape.io/github/bibi21000/janitoo_dhcp/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/bibi21000/janitoo_dhcp/master
+   :alt: Code Health
+
+.. image:: https://img.shields.io/badge/Documenation-ok-brightgreen.svg?style=flat
+   :target: https://bibi21000.github.io/janitoo_dhcp/index.html
+   :alt: Documentation
 
 ===============
 The README file
