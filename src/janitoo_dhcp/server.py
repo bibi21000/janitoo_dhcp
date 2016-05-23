@@ -79,7 +79,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         """
         try:
             self.stop()
-        except:
+        except Exception:
             logger.debug("[%s] - Catched exception", self.__class__.__name__)
 
     def start(self):
@@ -96,7 +96,7 @@ class DHCPServer(JNTDBServer, JNTControllerManager):
         if loop_sleep is not None:
             try:
                 self.loop_sleep = int(loop_sleep)
-            except:
+            except Exception:
                 logger.exception("[%s] - Exception when retrieving value of loop_sleep. Use default value instead", self.__class__.__name__)
         self.network = DhcpNetwork(self._stopevent, self.options, is_primary=True, is_secondary=False, do_heartbeat_dispatch=True)
         JNTDBServer.start(self)

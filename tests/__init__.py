@@ -22,7 +22,7 @@ __copyright__ = "Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi2100
 
 try:
     __import__('pkg_resources').declare_namespace(__name__)
-except:
+except Exception:
     # bootstrapping
     pass
 

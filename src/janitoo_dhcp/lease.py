@@ -323,7 +323,7 @@ class LeaseManager(object):
         #~ print "Update heartbeat here"
         try:
             self._cachemgr.update(add_ctrl, add_node, state=state, last_seen=datetime.datetime.now())
-        except:
+        except Exception:
             logger.exception('Catched exception')
 
     def check_heartbeat(self, session=None):
@@ -338,5 +338,5 @@ class LeaseManager(object):
             self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))
             self.dbsession.commit()
             self.dbsession.expunge_all()
-        except:
+        except Exception:
             logger.exception('Catched exception')

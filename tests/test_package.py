@@ -27,7 +27,7 @@ __copyright__ = "Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi2100
 SKIP = False
 try:
     from janitoo_nosetests.packaging import JNTTPackaging, JNTTPackagingCommon
-except:
+except Exception:
     print "Skip packaging tests"
     SKIP = True
 
