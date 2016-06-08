@@ -63,7 +63,7 @@ __email__ = 'bibi21000@gmail.com'
 __copyright__ = "Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000"
 
 from janitoo.mqtt import MQTTClient
-from threading import Timer
+import threading
 
 class DHCPClient(object):
     """The Dynamic Home Configuration Protocol client
