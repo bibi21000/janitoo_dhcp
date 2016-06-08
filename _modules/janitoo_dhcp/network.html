@@ -143,8 +143,7 @@
 <span class="c"># Set default logging handler to avoid &quot;No handler found&quot; warnings.</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+
 <span class="kn">from</span> <span class="nn">pkg_resources</span> <span class="kn">import</span> <span class="n">iter_entry_points</span>
 <span class="kn">from</span> <span class="nn">janitoo.value</span> <span class="kn">import</span> <span class="n">JNTValue</span>
 <span class="kn">from</span> <span class="nn">janitoo.node</span> <span class="kn">import</span> <span class="n">JNTNode</span>
@@ -174,10 +173,6 @@
         <span class="n">ret</span><span class="p">[</span><span class="s">&#39;is_failed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_failed</span><span class="p">,</span>
         <span class="n">ret</span><span class="p">[</span><span class="s">&#39;is_secondary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_secondary</span><span class="p">,</span>
         <span class="n">ret</span><span class="p">[</span><span class="s">&#39;is_primary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_primary</span><span class="p">,</span>
-        <span class="c">#~ if &#39;kvals&#39; in extras and self.network.dbcon is not None:</span>
-            <span class="c">#~ vals = self.kvals</span>
-            <span class="c">#~ for key in vals.keys():</span>
-                <span class="c">#~ ret[key]=vals[key]</span>
 </div>
 <div class="viewcode-block" id="DhcpNetwork.extend_from_entry_points"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.network.DhcpNetwork.extend_from_entry_points">[docs]</a>    <span class="k">def</span> <span class="nf">extend_from_entry_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;&quot;Extend the network with methods found in entrypoints</span>
