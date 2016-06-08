@@ -62,10 +62,6 @@ class DhcpNetwork(JNTNetwork):
         ret['is_failed'] = self.is_failed,
         ret['is_secondary'] = self.is_secondary,
         ret['is_primary'] = self.is_primary,
-        #~ if 'kvals' in extras and self.network.dbcon is not None:
-            #~ vals = self.kvals
-            #~ for key in vals.keys():
-                #~ ret[key]=vals[key]
 
     def extend_from_entry_points(self, group):
         """"Extend the network with methods found in entrypoints
