@@ -76,7 +76,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'ONLINE')
         for i in range(0, self.server.lease_mgr.heartbeat_count-1):
             self.server.lease_mgr.check_heartbeat()
-            print(self.server.lease_mgr._cachemgr.entries[1][1], i+1)
+            print((self.server.lease_mgr._cachemgr.entries[1][1], i+1))
             self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'ONLINE')
             self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['count'], i+1)
         self.server.lease_mgr.check_heartbeat()
@@ -84,7 +84,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'PENDING')
         for i in range(0, self.server.lease_mgr.heartbeat_count-1):
             self.server.lease_mgr.check_heartbeat()
-            print(self.server.lease_mgr._cachemgr.entries[1][1], i+1)
+            print((self.server.lease_mgr._cachemgr.entries[1][1], i+1))
             self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['state'], 'PENDING')
             self.assertEqual(self.server.lease_mgr._cachemgr.entries[1][1]['count'], i+1)
         self.server.lease_mgr.check_heartbeat()
@@ -120,7 +120,7 @@ class DhcpServerCommon(DhcpCommon):
         self.assertEqual(self.server.lease_mgr._cachemgr.entries[99][1]['state'], 'ONLINE')
         for i in range(0, 3*self.server.lease_mgr.heartbeat_count):
             self.server.lease_mgr.check_heartbeat()
-        print self.server.lease_mgr._cachemgr.entries
+        print(self.server.lease_mgr._cachemgr.entries)
         self.assertTrue(99 not in self.server.lease_mgr._cachemgr.entries)
 
     def test_110_dhcp_cache_heartbeat_recevive_in_online(self):
@@ -175,11 +175,11 @@ class DhcpServerCommon(DhcpCommon):
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         self.server.lease_mgr.repair_lease(1, 1, options)
         res = self.server.lease_mgr.resolv_hadd(1,1)
-        print res
+        print(res)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
 
@@ -213,23 +213,23 @@ class DhcpServerCommon(DhcpCommon):
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
-        print res
+        print(res)
         self.assertEqual(res['add_ctrl'], 10)
         self.assertEqual(res['add_node'], 0)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
         res = self.server.lease_mgr.new_lease(-1, 3, options)
-        print res
+        print(res)
         self.assertEqual(res['add_ctrl'], 11)
         self.assertEqual(res['add_node'], 0)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
 
@@ -238,33 +238,33 @@ class DhcpServerCommon(DhcpCommon):
         self.assertHeartbeatNode()
         options={'name':'name','location':'location','cmd_classes':'0x0000','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(-1, 3, options)
-        print res
+        print(res)
         self.assertEqual(res['add_ctrl'], 10)
         self.assertEqual(res['add_node'], 0)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
         res = self.server.lease_mgr.new_lease(10, 3, options)
-        print res
+        print(res)
         self.assertEqual(res['add_ctrl'], 10)
         self.assertEqual(res['add_node'], 1)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
         res = self.server.lease_mgr.new_lease(10, -1, options)
-        print res
+        print(res)
         self.assertEqual(res['add_ctrl'], 10)
         self.assertEqual(res['add_node'], 2)
         self.assertEqual(res['name'], 'name')
         self.assertEqual(res['location'], 'location')
         for p in res['params']:
-            print p
+            print(p)
             self.assertTrue(p['key'] in ['otherkey', 'otherkey2'])
             self.assertTrue(p['value'] in ['other', 'other2'])
 
@@ -287,14 +287,14 @@ class DhcpServerCommon(DhcpCommon):
         options={'name':'name','location':'location','cmd_classes':'0x0028,0x0027','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(10, -1, options)
         res = self.server.lease_mgr.resolv_cmd_classes(cmd_classes="0x0027")
-        print res
+        print(res)
         self.assertEqual(len(res), 3)
         self.assertNotEqual(json_dumps(res), None)
         res = self.server.lease_mgr.resolv_cmd_classes(cmd_classes=["0x1050","0x0028"])
-        print res
+        print(res)
         self.assertEqual(len(res), 2)
         res = self.server.lease_mgr.resolv_cmd_classes()
-        print res
+        print(res)
         self.assertEqual(len(res), 4)
 
     def test_170_dhcp_resolv_name(self):
@@ -309,14 +309,14 @@ class DhcpServerCommon(DhcpCommon):
         options={'name':'name4','location':'garden.location','cmd_classes':'0x0028,0x0027','otherkey':'other','otherkey2':'other2',}
         res = self.server.lease_mgr.new_lease(10, -1, options)
         res = self.server.lease_mgr.resolv_name(name="name1")
-        print res
+        print(res)
         self.assertEqual(len(res), 1)
         self.assertNotEqual(json_dumps(res), None)
         res = self.server.lease_mgr.resolv_name(location="location")
-        print res
+        print(res)
         self.assertEqual(len(res), 4)
         res = self.server.lease_mgr.resolv_name(location="kitchen.location")
-        print res
+        print(res)
         self.assertEqual(len(res), 2)
 
 class TestDhcpSerser(JNTTDBServerCommon, DhcpServerCommon, JNTTDBServer ):

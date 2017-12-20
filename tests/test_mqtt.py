@@ -82,7 +82,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 400)
         self.message = None
         uuid = self.mqttc.subscribe_reply(callback=self.on_message)
@@ -93,7 +93,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 400)
 
     def test_110_dhcp_lease_new_release_remove(self):
@@ -106,7 +106,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -123,7 +123,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -140,7 +140,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -156,7 +156,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
@@ -170,7 +170,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -186,7 +186,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
@@ -201,7 +201,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -218,7 +218,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
@@ -232,7 +232,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')
@@ -248,7 +248,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
             i += 1
             time.sleep(0.0001)
         self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['add_ctrl'], add_ctrl)
         self.assertEqual(self.payload['add_node'], add_node)
@@ -261,7 +261,7 @@ class TestMqtt(DhcpCommon, JNTTDBServer):
         self.mqttc.publish(self.topic, json_dumps(msg))
         time.sleep(2)
         uuid = self.mqttc.unsubscribe_reply(uuid)
-        print self.payload
+        print(self.payload)
         self.assertEqual(self.payload['msg_status'], 200)
         self.assertEqual(self.payload['name'], 'test')
         self.assertEqual(self.payload['location'], 'location_test')

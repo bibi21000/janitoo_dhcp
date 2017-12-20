@@ -44,14 +44,14 @@ from janitoo.utils import HADD_SEP, HADD
 
 sys.path.insert(0, os.path.abspath('.'))
 
-from test_models import ModelsCommon
+from .test_models import ModelsCommon
 #Launch ModelsCommon tests for every supported database
 jntt_docker_models(__name__, ModelsCommon, prefix='Dhcp')
 
-from test_full_models import CommonFullModels
+from .test_full_models import CommonFullModels
 #Launch ModelsCommon tests for every supported database
 jntt_docker_fullmodels(__name__, CommonFullModels, prefix='Dhcp')
 
-from test_server import DhcpServerCommon
+from .test_server import DhcpServerCommon
 #Launch DhcpServerCommon tests for every supported database
 jntt_docker_dbserver(__name__, DhcpServerCommon, prefix='Dhcp')

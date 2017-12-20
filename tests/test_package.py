@@ -28,7 +28,7 @@ SKIP = False
 try:
     from janitoo_nosetests.packaging import JNTTPackaging, JNTTPackagingCommon
 except Exception:
-    print "Skip packaging tests"
+    print("Skip packaging tests")
     SKIP = True
 
 if not SKIP:
