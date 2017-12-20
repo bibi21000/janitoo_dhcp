@@ -104,7 +104,7 @@ class DHCPClient(object):
         self._dhcpc_heartbeat_timer = None
         self._dhcpc_heartbeat_timer = threading.Timer(self._dhcpc_heartbeat_timeout, self._dhcpc_heartbeat)
         self._dhcpc_heartbeat_timer.start()
-        for node in self._dhcpc_add_nodes.keys():
+        for node in list(self._dhcpc_add_nodes.keys()):
             if self._dhcpc_add_nodes[node]['callback_heartbeat'] == None or self._dhcpc_add_nodes[node]['callback_heartbeat'](node) == True:
                 self.mqttc.publish_heartbeat(add_ctrl, add_node)
 

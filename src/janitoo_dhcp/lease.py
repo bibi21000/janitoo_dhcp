@@ -90,8 +90,8 @@ class LeaseManager(object):
         :rtype: dict()
         """
         #We set the state of online machines to offline.
-        for ctrl in self._cachemgr.entries.keys():
-            for node in self._cachemgr.entries[ctrl].keys():
+        for ctrl in list(self._cachemgr.entries.keys()):
+            for node in list(self._cachemgr.entries[ctrl].keys()):
                 if self._cachemgr.entries[ctrl][node]['state'] in ['ONLINE']:
                     self._cachemgr.entries[ctrl][node]['state'] = 'OFFLINE'
         self._cachemgr.flush(self.dbsession.query(jntmodel.Lease))
@@ -173,7 +173,7 @@ class LeaseManager(object):
         lname = None
         llocation = None
         lcmd_classes = None
-        for k in options.keys():
+        for k in list(options.keys()):
             if k == 'name':
                 lname = options[k]
             elif k == 'location':
