@@ -5,13 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>janitoo_dhcp.models &mdash; janitoo_dhcp 0.0.7 documentation</title>
+    <title>janitoo_dhcp.models &#8212; janitoo_dhcp 0.0.7 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -19,7 +17,8 @@
         VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -30,17 +29,17 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="janitoo_dhcp 0.0.7 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -110,92 +109,92 @@
     <div class="col-md-12 content">
       
   <h1>Source code for janitoo_dhcp.models</h1><div class="highlight"><pre>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;The models</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="n">__license__</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="s">    This file is part of Janitoo.</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    This file is part of Janitoo.</span>
 
-<span class="s">    Janitoo is free software: you can redistribute it and/or modify</span>
-<span class="s">    it under the terms of the GNU General Public License as published by</span>
-<span class="s">    the Free Software Foundation, either version 3 of the License, or</span>
-<span class="s">    (at your option) any later version.</span>
+<span class="s2">    Janitoo is free software: you can redistribute it and/or modify</span>
+<span class="s2">    it under the terms of the GNU General Public License as published by</span>
+<span class="s2">    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="s2">    (at your option) any later version.</span>
 
-<span class="s">    Janitoo is distributed in the hope that it will be useful,</span>
-<span class="s">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<span class="s">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<span class="s">    GNU General Public License for more details.</span>
+<span class="s2">    Janitoo is distributed in the hope that it will be useful,</span>
+<span class="s2">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="s2">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="s2">    GNU General Public License for more details.</span>
 
-<span class="s">    You should have received a copy of the GNU General Public License</span>
-<span class="s">    along with Janitoo. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="s2">    You should have received a copy of the GNU General Public License</span>
+<span class="s2">    along with Janitoo. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
 
-<span class="s">&quot;&quot;&quot;</span>
-<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Sébastien GALLET aka bibi21000&#39;</span>
-<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;bibi21000@gmail.com&#39;</span>
-<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&quot;Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Sébastien GALLET aka bibi21000&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s1">&#39;bibi21000@gmail.com&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000&quot;</span>
 
-<span class="c"># Set default logging handler to avoid &quot;No handler found&quot; warnings.</span>
+<span class="c1"># Set default logging handler to avoid &quot;No handler found&quot; warnings.</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="kn">as</span> <span class="nn">sa</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">relationship</span><span class="p">,</span> <span class="n">backref</span><span class="p">,</span> <span class="n">synonym</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="k">import</span> <span class="n">relationship</span><span class="p">,</span> <span class="n">backref</span><span class="p">,</span> <span class="n">synonym</span>
 
-<span class="kn">from</span> <span class="nn">janitoo_db.base</span> <span class="kn">import</span> <span class="n">Base</span>
-<span class="kn">from</span> <span class="nn">janitoo_db.helpers</span> <span class="kn">import</span> <span class="n">CRUDMixin</span>
-<span class="kn">from</span> <span class="nn">janitoo_db.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+<span class="kn">from</span> <span class="nn">janitoo_db.base</span> <span class="k">import</span> <span class="n">Base</span>
+<span class="kn">from</span> <span class="nn">janitoo_db.helpers</span> <span class="k">import</span> <span class="n">CRUDMixin</span>
+<span class="kn">from</span> <span class="nn">janitoo_db.security</span> <span class="k">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
 
 <div class="viewcode-block" id="extend"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.models.extend">[docs]</a><span class="k">def</span> <span class="nf">extend</span><span class="p">(</span> <span class="n">jntmodel</span> <span class="p">):</span>
 
     <span class="k">class</span> <span class="nc">Lease</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="n">CRUDMixin</span><span class="p">):</span>
-        <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;dhcp_leases&#39;</span>
-        <span class="c"># Here we define columns for the table person</span>
-        <span class="c"># Notice that each column is also a normal Python instance attribute.</span>
+        <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;dhcp_leases&#39;</span>
+        <span class="c1"># Here we define columns for the table person</span>
+        <span class="c1"># Notice that each column is also a normal Python instance attribute.</span>
         <span class="n">add_ctrl</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span>
         <span class="n">add_node</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">location</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">cmd_classes</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;0x0000&quot;</span><span class="p">)</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;offline&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">cmd_classes</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;0x0000&quot;</span><span class="p">)</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;offline&#39;</span><span class="p">)</span>
         <span class="n">last_seen</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">DateTime</span><span class="p">)</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span> <span class="s">&quot;LeaseParam&quot;</span><span class="p">,</span>
-                                <span class="n">primaryjoin</span><span class="o">=</span><span class="s">&quot;and_(Lease.add_ctrl==LeaseParam.add_ctrl, Lease.add_node==LeaseParam.add_node)&quot;</span><span class="p">,</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">relationship</span><span class="p">(</span> <span class="s2">&quot;LeaseParam&quot;</span><span class="p">,</span>
+                                <span class="n">primaryjoin</span><span class="o">=</span><span class="s2">&quot;and_(Lease.add_ctrl==LeaseParam.add_ctrl, Lease.add_node==LeaseParam.add_node)&quot;</span><span class="p">,</span>
                             <span class="p">)</span>
         <span class="n">__table_args__</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sa</span><span class="o">.</span><span class="n">PrimaryKeyConstraint</span><span class="p">(</span><span class="s">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s">&#39;add_node&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;dhcp_leases_primary&quot;</span><span class="p">),</span>
+            <span class="n">sa</span><span class="o">.</span><span class="n">PrimaryKeyConstraint</span><span class="p">(</span><span class="s1">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;add_node&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dhcp_leases_primary&quot;</span><span class="p">),</span>
                          <span class="p">)</span>
         <span class="k">def</span> <span class="nf">classes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            &quot;&quot;&quot;</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_classes</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_classes</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 
     <span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span> <span class="o">=</span> <span class="n">Lease</span>
 
-    <span class="c"># hack to get class pickable</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">],</span> <span class="s">&#39;Lease&#39;</span><span class="p">,</span> <span class="n">Lease</span><span class="p">)</span>
+    <span class="c1"># hack to get class pickable</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="vm">__name__</span><span class="p">],</span> <span class="s1">&#39;Lease&#39;</span><span class="p">,</span> <span class="n">Lease</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">LeaseParam</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="n">CRUDMixin</span><span class="p">):</span>
-        <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;dhcp_leases_param&#39;</span>
-        <span class="c"># Here we define columns for the table address.</span>
-        <span class="c"># Notice that each column is also a normal Python instance attribute.</span>
+        <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;dhcp_leases_param&#39;</span>
+        <span class="c1"># Here we define columns for the table address.</span>
+        <span class="c1"># Notice that each column is also a normal Python instance attribute.</span>
         <span class="n">add_ctrl</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span>
         <span class="n">add_node</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span>
-        <span class="n">key</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">250</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">__table_args__</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sa</span><span class="o">.</span><span class="n">PrimaryKeyConstraint</span><span class="p">(</span><span class="s">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s">&#39;add_node&#39;</span><span class="p">,</span> <span class="s">&#39;key&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;dhcp_leases_param_primary&quot;</span><span class="p">),</span>
-            <span class="n">sa</span><span class="o">.</span><span class="n">ForeignKeyConstraint</span><span class="p">(</span> <span class="p">[</span><span class="s">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s">&#39;add_node&#39;</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="s">&#39;dhcp_leases.add_ctrl&#39;</span><span class="p">,</span> <span class="s">&#39;dhcp_leases.add_node&#39;</span><span class="p">],</span>
-                                  <span class="n">name</span><span class="o">=</span><span class="s">&quot;dhcp_leases_param_foreign_lease&quot;</span><span class="p">),</span>
+            <span class="n">sa</span><span class="o">.</span><span class="n">PrimaryKeyConstraint</span><span class="p">(</span><span class="s1">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;add_node&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dhcp_leases_param_primary&quot;</span><span class="p">),</span>
+            <span class="n">sa</span><span class="o">.</span><span class="n">ForeignKeyConstraint</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;add_ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;add_node&#39;</span><span class="p">],</span>
+                                  <span class="p">[</span><span class="s1">&#39;dhcp_leases.add_ctrl&#39;</span><span class="p">,</span> <span class="s1">&#39;dhcp_leases.add_node&#39;</span><span class="p">],</span>
+                                  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dhcp_leases_param_foreign_lease&quot;</span><span class="p">),</span>
                                 <span class="p">)</span>
 
     <span class="n">jntmodel</span><span class="o">.</span><span class="n">LeaseParam</span> <span class="o">=</span> <span class="n">LeaseParam</span>
 
-    <span class="c"># hack to get class pickable</span>
-    <span class="nb">setattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">],</span> <span class="s">&#39;LeaseParam&#39;</span><span class="p">,</span> <span class="n">LeaseParam</span><span class="p">)</span></div>
+    <span class="c1"># hack to get class pickable</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="vm">__name__</span><span class="p">],</span> <span class="s1">&#39;LeaseParam&#39;</span><span class="p">,</span> <span class="n">LeaseParam</span><span class="p">)</span></div>
 </pre></div>
 
     </div>
@@ -210,7 +209,7 @@
     </p>
     <p>
         &copy; Copyright 2014,2015,2016 Sébastien GALLET aka bibi2100 &lt;bibi21000@gmail.com&gt;.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
     </p>
   </div>
 </footer>

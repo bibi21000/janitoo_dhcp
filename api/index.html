@@ -5,13 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>janitoo_dhcp package &mdash; janitoo_dhcp 0.0.7 documentation</title>
+    <title>janitoo_dhcp package &#8212; janitoo_dhcp 0.0.7 documentation</title>
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -19,7 +17,8 @@
         VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -30,16 +29,17 @@
     <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="janitoo_dhcp 0.0.7 documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -177,24 +177,24 @@ At the end, it must release all leases</p>
 </dl>
 <dl class="class">
 <dt id="janitoo_dhcp.dhclient.DHCPClient">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.dhclient.</tt><tt class="descname">DHCPClient</tt><big>(</big><em>options</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.dhclient.</code><code class="descname">DHCPClient</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>The Dynamic Home Configuration Protocol client</p>
 <dl class="method">
 <dt id="janitoo_dhcp.dhclient.DHCPClient.lock_dhcpc">
-<tt class="descname">lock_dhcpc</tt><big>(</big><em>add_node</em>, <em>callback</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.lock_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.lock_dhcpc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">lock_dhcpc</code><span class="sig-paren">(</span><em>add_node</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.lock_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.lock_dhcpc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an HADD fron the DHCP server and launch callback at the end of the process</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.dhclient.DHCPClient.new_dhcpc">
-<tt class="descname">new_dhcpc</tt><big>(</big><em>add_node</em>, <em>callback</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.new_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.new_dhcpc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">new_dhcpc</code><span class="sig-paren">(</span><em>add_node</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.new_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.new_dhcpc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a new HADD fron the DHCP server and launch callback at the end of the process</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.dhclient.DHCPClient.release_dhcpc">
-<tt class="descname">release_dhcpc</tt><big>(</big><em>add_node</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.release_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.release_dhcpc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">release_dhcpc</code><span class="sig-paren">(</span><em>add_node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/dhclient.html#DHCPClient.release_dhcpc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.dhclient.DHCPClient.release_dhcpc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Release the HADD</p>
 </dd></dl>
 
@@ -208,8 +208,8 @@ At the end, it must release all leases</p>
 <p>Add capabilites</p>
 <dl class="class">
 <dt id="janitoo_dhcp.lease.LeaseManager">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.lease.</tt><tt class="descname">LeaseManager</tt><big>(</big><em>options</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.lease.</code><code class="descname">LeaseManager</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>The leases manager</p>
 <p>Can be used in dynammic mode (with start, stop and a db session or in dynamic mode to keep the states of modes in memory (calling check_heartbeat) periodically.</p>
 <dl class="docutils">
@@ -223,7 +223,7 @@ At the end, it must release all leases</p>
 </dl>
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.check_heartbeat">
-<tt class="descname">check_heartbeat</tt><big>(</big><em>session=None</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.check_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.check_heartbeat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_heartbeat</code><span class="sig-paren">(</span><em>session=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.check_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.check_heartbeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check the states of the machine. Must be called in a timer
 Called in a separate thread. Must use a scoped_session.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -238,7 +238,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.heartbeat_hadd">
-<tt class="descname">heartbeat_hadd</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em>, <em>state='ONLINE'</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.heartbeat_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.heartbeat_hadd" title="Permalink to this definition">¶</a></dt>
+<code class="descname">heartbeat_hadd</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em>, <em>state='ONLINE'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.heartbeat_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.heartbeat_hadd" title="Permalink to this definition">¶</a></dt>
 <dd><p>A machine heartbeat us</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -256,7 +256,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.lock_lease">
-<tt class="descname">lock_lease</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.lock_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.lock_lease" title="Permalink to this definition">¶</a></dt>
+<code class="descname">lock_lease</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.lock_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.lock_lease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lock a lease already in database. We should manage the case of a db crash.
 Also update last_seen to now and state to boot</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -272,7 +272,7 @@ Also update last_seen to now and state to boot</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dict with all informations</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict()</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</p>
 </td>
 </tr>
 </tbody>
@@ -281,7 +281,7 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.new_lease">
-<tt class="descname">new_lease</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em>, <em>options</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.new_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.new_lease" title="Permalink to this definition">¶</a></dt>
+<code class="descname">new_lease</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em>, <em>options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.new_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.new_lease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a new lease
 return add_ctrl, add_node, options</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -297,7 +297,7 @@ return add_ctrl, add_node, options</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dict with all informations</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict()</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</p>
 </td>
 </tr>
 </tbody>
@@ -306,7 +306,7 @@ return add_ctrl, add_node, options</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.release_lease">
-<tt class="descname">release_lease</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.release_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.release_lease" title="Permalink to this definition">¶</a></dt>
+<code class="descname">release_lease</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.release_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.release_lease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Release a lease. When a controller / node shutdown, it must release its nodes. Set the state to offline
 return false or true</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -325,7 +325,7 @@ return false or true</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.remove_lease">
-<tt class="descname">remove_lease</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.remove_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.remove_lease" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_lease</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.remove_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.remove_lease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a lease from db</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -335,14 +335,14 @@ return false or true</p>
 <li><strong>add_ctrl</strong> (<em>Integer</em>) &#8211; the controller part of the address</li>
 <li><strong>add_node</strong> (<em>Integer</em>) &#8211; the node part of the address. 0 for controller, -1 for all nodes managed by controller.</li>
 <li><strong>state</strong> (<em>String</em>) &#8211; the state of the node.</li>
-<li><strong>last_seen</strong> (<a class="reference external" href="http://docs.python.org/library/datetime.html#module-datetime" title="(in Python v2.7)"><em>datetime</em></a>) &#8211; the last time the node have been seen.</li>
+<li><strong>last_seen</strong> (<a class="reference external" href="https://docs.python.org/2/library/datetime.html#module-datetime" title="(in Python v2.7)"><em>datetime</em></a>) &#8211; the last time the node have been seen.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dict</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict()</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</p>
 </td>
 </tr>
 </tbody>
@@ -351,7 +351,7 @@ return false or true</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.repair_lease">
-<tt class="descname">repair_lease</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em>, <em>options</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.repair_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.repair_lease" title="Permalink to this definition">¶</a></dt>
+<code class="descname">repair_lease</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em>, <em>options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.repair_lease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.repair_lease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Repair a lease. If the dhcpd database is lost, some client can send their adress and some other informations to rebuid it.
 Also update last_seen to now and state to boot</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -361,7 +361,7 @@ Also update last_seen to now and state to boot</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>add_ctrl</strong> (<em>Integer</em>) &#8211; the controller part of the address</li>
 <li><strong>add_node</strong> (<em>Integer</em>) &#8211; the node part of the address. 0 for controller</li>
-<li><strong>options</strong> (<em>dict()</em>) &#8211; the options for the lease</li>
+<li><strong>options</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><em></em><em>)</em><em></em>) &#8211; the options for the lease</li>
 </ul>
 </td>
 </tr>
@@ -371,17 +371,17 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.resolv_cmd_classes">
-<tt class="descname">resolv_cmd_classes</tt><big>(</big><em>cmd_classes=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_cmd_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_cmd_classes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resolv_cmd_classes</code><span class="sig-paren">(</span><em>cmd_classes=[]</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_cmd_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_cmd_classes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resolv a cmd_classes to lease(s)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em>[]</em>) &#8211; The extra inforamtions to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em></em><em>[</em><em></em><em>]</em><em></em>) &#8211; The extra inforamtions to add</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict()</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +390,7 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.resolv_hadd">
-<tt class="descname">resolv_hadd</tt><big>(</big><em>add_ctrl</em>, <em>add_node</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_hadd" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resolv_hadd</code><span class="sig-paren">(</span><em>add_ctrl</em>, <em>add_node</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_hadd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resolv an address to lease</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -405,7 +405,7 @@ Also update last_seen to now and state to boot</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A dict with all informations</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict()</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</p>
 </td>
 </tr>
 </tbody>
@@ -414,17 +414,17 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.resolv_name">
-<tt class="descname">resolv_name</tt><big>(</big><em>name=None, location=None, options=['all']</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resolv_name</code><span class="sig-paren">(</span><em>name=None, location=None, options=['all']</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.resolv_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.resolv_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resolv a name, location to lease(s)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em>[]</em>) &#8211; The extra inforamtions to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em></em><em>[</em><em></em><em>]</em><em></em>) &#8211; The extra inforamtions to add</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict()</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</td>
 </tr>
 </tbody>
 </table>
@@ -433,17 +433,17 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.start">
-<tt class="descname">start</tt><big>(</big><em>dbsession</em>, <em>cache</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><em>dbsession</em>, <em>cache</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the lease manager in db mode</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em>[]</em>) &#8211; The extra inforamtions to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em></em><em>[</em><em></em><em>]</em><em></em>) &#8211; The extra inforamtions to add</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict()</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</td>
 </tr>
 </tbody>
 </table>
@@ -451,17 +451,17 @@ Also update last_seen to now and state to boot</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.lease.LeaseManager.stop">
-<tt class="descname">stop</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.stop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/lease.html#LeaseManager.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.lease.LeaseManager.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the lease manager</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em>[]</em>) &#8211; The extra inforamtions to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>extras</strong> (<em></em><em>[</em><em></em><em>]</em><em></em>) &#8211; The extra inforamtions to add</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict()</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>()</td>
 </tr>
 </tbody>
 </table>
@@ -475,84 +475,84 @@ Also update last_seen to now and state to boot</p>
 <p>The models</p>
 <dl class="class">
 <dt id="janitoo_dhcp.models.Lease">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.models.</tt><tt class="descname">Lease</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#janitoo_dhcp.models.Lease" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">janitoo_db.helpers.CRUDMixin</span></tt></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.models.</code><code class="descname">Lease</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#janitoo_dhcp.models.Lease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal"><span class="pre">janitoo_db.helpers.CRUDMixin</span></code></p>
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.add_ctrl">
-<tt class="descname">add_ctrl</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.add_ctrl" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_ctrl</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.add_ctrl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.add_node">
-<tt class="descname">add_node</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.add_node" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_node</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.add_node" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.models.Lease.classes">
-<tt class="descname">classes</tt><big>(</big><big>)</big><a class="headerlink" href="#janitoo_dhcp.models.Lease.classes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#janitoo_dhcp.models.Lease.classes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.cmd_classes">
-<tt class="descname">cmd_classes</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.cmd_classes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cmd_classes</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.cmd_classes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.last_seen">
-<tt class="descname">last_seen</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.last_seen" title="Permalink to this definition">¶</a></dt>
+<code class="descname">last_seen</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.last_seen" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.location">
-<tt class="descname">location</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">location</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.location" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.name">
-<tt class="descname">name</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.params">
-<tt class="descname">params</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.params" title="Permalink to this definition">¶</a></dt>
+<code class="descname">params</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.params" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.Lease.state">
-<tt class="descname">state</tt><a class="headerlink" href="#janitoo_dhcp.models.Lease.state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><a class="headerlink" href="#janitoo_dhcp.models.Lease.state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="janitoo_dhcp.models.LeaseParam">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.models.</tt><tt class="descname">LeaseParam</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">janitoo_db.helpers.CRUDMixin</span></tt></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.models.</code><code class="descname">LeaseParam</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal"><span class="pre">janitoo_db.helpers.CRUDMixin</span></code></p>
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.LeaseParam.add_ctrl">
-<tt class="descname">add_ctrl</tt><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.add_ctrl" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_ctrl</code><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.add_ctrl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.LeaseParam.add_node">
-<tt class="descname">add_node</tt><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.add_node" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_node</code><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.add_node" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.LeaseParam.key">
-<tt class="descname">key</tt><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.key" title="Permalink to this definition">¶</a></dt>
+<code class="descname">key</code><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="janitoo_dhcp.models.LeaseParam.value">
-<tt class="descname">value</tt><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">value</code><a class="headerlink" href="#janitoo_dhcp.models.LeaseParam.value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="janitoo_dhcp.models.extend">
-<tt class="descclassname">janitoo_dhcp.models.</tt><tt class="descname">extend</tt><big>(</big><em>jntmodel</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/models.html#extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.models.extend" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">janitoo_dhcp.models.</code><code class="descname">extend</code><span class="sig-paren">(</span><em>jntmodel</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/models.html#extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.models.extend" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -569,18 +569,18 @@ Also update last_seen to now and state to boot</p>
 </dl>
 <dl class="class">
 <dt id="janitoo_dhcp.network.DhcpNetwork">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.network.</tt><tt class="descname">DhcpNetwork</tt><big>(</big><em>stop_event</em>, <em>options</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">janitoo.dhcp.JNTNetwork</span></tt></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.network.</code><code class="descname">DhcpNetwork</code><span class="sig-paren">(</span><em>stop_event</em>, <em>options</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">janitoo.dhcp.JNTNetwork</span></code></p>
 <p>The network manager for the flask application</p>
 <dl class="method">
 <dt id="janitoo_dhcp.network.DhcpNetwork.emit_network">
-<tt class="descname">emit_network</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork.emit_network"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork.emit_network" title="Permalink to this definition">¶</a></dt>
+<code class="descname">emit_network</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork.emit_network"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork.emit_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Emit a network state event</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.network.DhcpNetwork.extend_from_entry_points">
-<tt class="descname">extend_from_entry_points</tt><big>(</big><em>group</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork.extend_from_entry_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork.extend_from_entry_points" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extend_from_entry_points</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/network.html#DhcpNetwork.extend_from_entry_points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.network.DhcpNetwork.extend_from_entry_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>&#8220;Extend the network with methods found in entrypoints</p>
 </dd></dl>
 
@@ -592,19 +592,19 @@ Also update last_seen to now and state to boot</p>
 <p>The dhcp server</p>
 <dl class="class">
 <dt id="janitoo_dhcp.server.DHCPServer">
-<em class="property">class </em><tt class="descclassname">janitoo_dhcp.server.</tt><tt class="descname">DHCPServer</tt><big>(</big><em>options</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">janitoo_db.server.JNTDBServer</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">janitoo.server.JNTControllerManager</span></tt></p>
+<em class="property">class </em><code class="descclassname">janitoo_dhcp.server.</code><code class="descname">DHCPServer</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">janitoo_db.server.JNTDBServer</span></code>, <code class="xref py py-class docutils literal"><span class="pre">janitoo.server.JNTControllerManager</span></code></p>
 <p>The Dynamic Home Configuration Protocol Server</p>
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.check_heartbeat">
-<tt class="descname">check_heartbeat</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.check_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.check_heartbeat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_heartbeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.check_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.check_heartbeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check the states of the machines. Must be called in a timer
 Called in a separate thread. Must use a scoped_session.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_heartbeat">
-<tt class="descname">mqtt_on_heartbeat</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_heartbeat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_heartbeat</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_heartbeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>On heartbeat message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -612,7 +612,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -623,7 +623,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_lease_lock">
-<tt class="descname">mqtt_on_lease_lock</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_lock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_lock" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_lease_lock</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_lock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_lock" title="Permalink to this definition">¶</a></dt>
 <dd><p>On lease lock message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -631,7 +631,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -642,7 +642,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_lease_new">
-<tt class="descname">mqtt_on_lease_new</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_new"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_new" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_lease_new</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_new"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_new" title="Permalink to this definition">¶</a></dt>
 <dd><p>On generic message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -650,7 +650,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -661,7 +661,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_lease_release">
-<tt class="descname">mqtt_on_lease_release</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_release"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_release" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_lease_release</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_release"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_release" title="Permalink to this definition">¶</a></dt>
 <dd><p>On lease release message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -669,7 +669,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -680,7 +680,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_lease_remove">
-<tt class="descname">mqtt_on_lease_remove</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_remove" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_lease_remove</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>On generic message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -688,7 +688,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -699,7 +699,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_lease_repair">
-<tt class="descname">mqtt_on_lease_repair</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_repair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_repair" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_lease_repair</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_lease_repair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_lease_repair" title="Permalink to this definition">¶</a></dt>
 <dd><p>On lease repair message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -707,7 +707,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -718,7 +718,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_message">
-<tt class="descname">mqtt_on_message</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_message" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_message</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>On generic message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -726,7 +726,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -737,7 +737,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_cmd_classes">
-<tt class="descname">mqtt_on_resolv_cmd_classes</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_cmd_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_cmd_classes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_resolv_cmd_classes</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_cmd_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_cmd_classes" title="Permalink to this definition">¶</a></dt>
 <dd><p>On generic message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -745,7 +745,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -756,7 +756,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_hadd">
-<tt class="descname">mqtt_on_resolv_hadd</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_hadd" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_resolv_hadd</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_hadd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_hadd" title="Permalink to this definition">¶</a></dt>
 <dd><p>On resolv hadd message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -764,7 +764,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -775,7 +775,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_name">
-<tt class="descname">mqtt_on_resolv_name</tt><big>(</big><em>client</em>, <em>userdata</em>, <em>message</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mqtt_on_resolv_name</code><span class="sig-paren">(</span><em>client</em>, <em>userdata</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.mqtt_on_resolv_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.mqtt_on_resolv_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>On generic message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -783,7 +783,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>client</strong> (<em>paho.mqtt.client.Client</em>) &#8211; the Client instance that is calling the callback.</li>
-<li><strong>userdata</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
+<li><strong>userdata</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#all" title="(in Python v2.7)"><em>all</em></a>) &#8211; user data of any type and can be set when creating a new client instance or with user_data_set(userdata).</li>
 <li><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) &#8211; The message variable is a MQTTMessage that describes all of the message parameters.</li>
 </ul>
 </td>
@@ -794,7 +794,7 @@ Called in a separate thread. Must use a scoped_session.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.publish_reply">
-<tt class="descname">publish_reply</tt><big>(</big><em>uuid</em>, <em>payload=None</em>, <em>qos=0</em>, <em>retain=False</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.publish_reply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.publish_reply" title="Permalink to this definition">¶</a></dt>
+<code class="descname">publish_reply</code><span class="sig-paren">(</span><em>uuid</em>, <em>payload=None</em>, <em>qos=0</em>, <em>retain=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.publish_reply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.publish_reply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Publish an uid reply to clients.</p>
 <p>This causes a message to be sent to the broker and subsequently from
 the broker to any clients subscribing to matching topics.</p>
@@ -803,14 +803,14 @@ the broker to any clients subscribing to matching topics.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>uuid</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The uuid sent in the request.</li>
+<li><strong>uuid</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The uuid sent in the request.</li>
 <li><strong>payload</strong> (<em>message</em>) &#8211; The actual message to send. If not given, or set to None a
 zero length message will be used. Passing an int or float will result
 in the payload being converted to a string representing that number. If
 you wish to send a true int/float, use struct.pack() to create the
 payload you require.</li>
-<li><strong>qos</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The quality of service level to use.</li>
-<li><strong>retain</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If set to true, the message will be set as the &#8220;last known good&#8221;/retained message for the topic.</li>
+<li><strong>qos</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The quality of service level to use.</li>
+<li><strong>retain</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If set to true, the message will be set as the &#8220;last known good&#8221;/retained message for the topic.</li>
 </ul>
 </td>
 </tr>
@@ -820,7 +820,7 @@ payload you require.</li>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.publish_stats">
-<tt class="descname">publish_stats</tt><big>(</big><em>stat</em>, <em>value=None</em>, <em>qos=0</em>, <em>retain=False</em><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.publish_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.publish_stats" title="Permalink to this definition">¶</a></dt>
+<code class="descname">publish_stats</code><span class="sig-paren">(</span><em>stat</em>, <em>value=None</em>, <em>qos=0</em>, <em>retain=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.publish_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.publish_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Publish a message on a topic.</p>
 <p>This causes a message to be sent to the broker and subsequently from
 the broker to any clients subscribing to matching topics.</p>
@@ -829,10 +829,10 @@ the broker to any clients subscribing to matching topics.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>stat</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The stat to send.</li>
+<li><strong>stat</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The stat to send.</li>
 <li><strong>value</strong> (<em>message</em>) &#8211; the value of the stat</li>
-<li><strong>qos</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The quality of service level to use.</li>
-<li><strong>retain</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If set to true, the message will be set as the &#8220;last known good&#8221;/retained message for the topic.</li>
+<li><strong>qos</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The quality of service level to use.</li>
+<li><strong>retain</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; If set to true, the message will be set as the &#8220;last known good&#8221;/retained message for the topic.</li>
 </ul>
 </td>
 </tr>
@@ -842,35 +842,35 @@ the broker to any clients subscribing to matching topics.</p>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.reload">
-<tt class="descname">reload</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.reload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.reload" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.reload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.reload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reload the server</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.resolv_heartbeat">
-<tt class="descname">resolv_heartbeat</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.resolv_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.resolv_heartbeat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resolv_heartbeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.resolv_heartbeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.resolv_heartbeat" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.run">
-<tt class="descname">run</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.run" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.start">
-<tt class="descname">start</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the DHCP Server</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.start_threads">
-<tt class="descname">start_threads</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.start_threads"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.start_threads" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_threads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.start_threads"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.start_threads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the threads associated to this server.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="janitoo_dhcp.server.DHCPServer.stop">
-<tt class="descname">stop</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.stop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/janitoo_dhcp/server.html#DHCPServer.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#janitoo_dhcp.server.DHCPServer.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the DHCP Server</p>
 </dd></dl>
 
@@ -895,7 +895,7 @@ the broker to any clients subscribing to matching topics.</p>
     </p>
     <p>
         &copy; Copyright 2014,2015,2016 Sébastien GALLET aka bibi2100 &lt;bibi21000@gmail.com&gt;.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
     </p>
   </div>
 </footer>

@@ -5,13 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>janitoo_dhcp.lease &mdash; janitoo_dhcp 0.0.7 documentation</title>
+    <title>janitoo_dhcp.lease &#8212; janitoo_dhcp 0.0.7 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -19,7 +17,8 @@
         VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -30,17 +29,17 @@
     <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="janitoo_dhcp 0.0.7 documentation" href="../../index.html" />
-    <link rel="up" title="Module code" href="../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -110,7 +109,7 @@
     <div class="col-md-12 content">
       
   <h1>Source code for janitoo_dhcp.lease</h1><div class="highlight"><pre>
-<span class="c"># -*- coding: utf-8 -*-</span>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;The dhcp lease manager</span>
 
 <span class="sd">About the sleeping nodes: should have the sleeping capability</span>
@@ -118,42 +117,42 @@
 <span class="sd">Add capabilites</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="n">__license__</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="s">    This file is part of Janitoo.</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    This file is part of Janitoo.</span>
 
-<span class="s">    Janitoo is free software: you can redistribute it and/or modify</span>
-<span class="s">    it under the terms of the GNU General Public License as published by</span>
-<span class="s">    the Free Software Foundation, either version 3 of the License, or</span>
-<span class="s">    (at your option) any later version.</span>
+<span class="s2">    Janitoo is free software: you can redistribute it and/or modify</span>
+<span class="s2">    it under the terms of the GNU General Public License as published by</span>
+<span class="s2">    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="s2">    (at your option) any later version.</span>
 
-<span class="s">    Janitoo is distributed in the hope that it will be useful,</span>
-<span class="s">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<span class="s">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<span class="s">    GNU General Public License for more details.</span>
+<span class="s2">    Janitoo is distributed in the hope that it will be useful,</span>
+<span class="s2">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="s2">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="s2">    GNU General Public License for more details.</span>
 
-<span class="s">    You should have received a copy of the GNU General Public License</span>
-<span class="s">    along with Janitoo. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="s2">    You should have received a copy of the GNU General Public License</span>
+<span class="s2">    along with Janitoo. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
 
-<span class="s">&quot;&quot;&quot;</span>
-<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Sébastien GALLET aka bibi21000&#39;</span>
-<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;bibi21000@gmail.com&#39;</span>
-<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&quot;Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Sébastien GALLET aka bibi21000&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s1">&#39;bibi21000@gmail.com&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000&quot;</span>
 
-<span class="c"># Set default logging handler to avoid &quot;No handler found&quot; warnings.</span>
+<span class="c1"># Set default logging handler to avoid &quot;No handler found&quot; warnings.</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">threading</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 
-<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="kn">as</span> <span class="nn">sa</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">func</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="kn">import</span> <span class="n">and_</span><span class="p">,</span> <span class="n">exists</span><span class="p">,</span> <span class="n">or_</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="k">import</span> <span class="n">func</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.sql</span> <span class="k">import</span> <span class="n">and_</span><span class="p">,</span> <span class="n">exists</span><span class="p">,</span> <span class="n">or_</span>
 
-<span class="c">#~ from janitoo.dhcp import HeartbeatMessage, CacheManager, leases_states, check_heartbeats</span>
-<span class="kn">from</span> <span class="nn">janitoo.utils</span> <span class="kn">import</span> <span class="n">HADD</span>
-<span class="kn">from</span> <span class="nn">janitoo_db.helpers</span> <span class="kn">import</span> <span class="n">saobject_to_dict</span>
-<span class="kn">import</span> <span class="nn">janitoo_db.models</span> <span class="kn">as</span> <span class="nn">jntmodel</span>
+<span class="c1">#~ from janitoo.dhcp import HeartbeatMessage, CacheManager, leases_states, check_heartbeats</span>
+<span class="kn">from</span> <span class="nn">janitoo.utils</span> <span class="k">import</span> <span class="n">HADD</span>
+<span class="kn">from</span> <span class="nn">janitoo_db.helpers</span> <span class="k">import</span> <span class="n">saobject_to_dict</span>
+<span class="kn">import</span> <span class="nn">janitoo_db.models</span> <span class="k">as</span> <span class="nn">jntmodel</span>
 
 <div class="viewcode-block" id="LeaseManager"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager">[docs]</a><span class="k">class</span> <span class="nc">LeaseManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The leases manager</span>
@@ -174,12 +173,12 @@
 <span class="sd">        :returns: A dict</span>
 <span class="sd">        :rtype: dict()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_timeout</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;heartbeat_timeout&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s">&quot;heartbeat_timeout&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">60</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;heartbeat_count&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s">&quot;heartbeat_count&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">3</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_dead</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;heartbeat_dead&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s">&quot;heartbeat_dead&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">604800</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_timeout</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;heartbeat_timeout&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s2">&quot;heartbeat_timeout&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">60</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;heartbeat_count&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s2">&quot;heartbeat_count&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heartbeat_dead</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;heartbeat_dead&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s2">&quot;heartbeat_dead&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="mi">604800</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_new_lease_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="LeaseManager.start"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dbsession</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Start the lease manager in db mode</span>
@@ -189,10 +188,10 @@
 <span class="sd">        :returns: A dict</span>
 <span class="sd">        :rtype: dict()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c">#Initialise the cache</span>
+        <span class="c1">#Initialise the cache</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span> <span class="o">=</span> <span class="n">cache</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="n">dbsession</span>
-</div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="n">dbsession</span></div>
+
 <div class="viewcode-block" id="LeaseManager.stop"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Stop the lease manager</span>
 
@@ -201,17 +200,17 @@
 <span class="sd">        :returns: A dict</span>
 <span class="sd">        :rtype: dict()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c">#We set the state of online machines to offline.</span>
-        <span class="k">for</span> <span class="n">ctrl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s">&#39;state&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ONLINE&#39;</span><span class="p">]:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;OFFLINE&#39;</span>
+        <span class="c1">#We set the state of online machines to offline.</span>
+        <span class="k">for</span> <span class="n">ctrl</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ONLINE&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">ctrl</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;OFFLINE&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">flush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">expunge_all</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span> <span class="o">=</span> <span class="bp">None</span>
-</div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span> <span class="o">=</span> <span class="kc">None</span></div>
+
 <div class="viewcode-block" id="LeaseManager.new_lease"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.new_lease">[docs]</a>    <span class="k">def</span> <span class="nf">new_lease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get a new lease</span>
 <span class="sd">        return add_ctrl, add_node, options</span>
@@ -223,12 +222,12 @@
 <span class="sd">        :returns: A dict with all informations</span>
 <span class="sd">        :rtype: dict()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c">#Check for malformated request</span>
+        <span class="c1">#Check for malformated request</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_new_lease_lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">add_ctrl</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="c">#A new controller wants an hadd.</span>
-                <span class="c">#Find and return max(add_ctrl), 0</span>
+                <span class="c1">#A new controller wants an hadd.</span>
+                <span class="c1">#Find and return max(add_ctrl), 0</span>
                 <span class="n">max_ctrl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">add_ctrl</span><span class="p">))</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">max_ctrl</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
                     <span class="n">add_ctrl</span> <span class="o">=</span> <span class="mi">10</span>
@@ -236,17 +235,17 @@
                     <span class="n">add_ctrl</span> <span class="o">=</span> <span class="n">max_ctrl</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="n">add_node</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="c">#A new node wants an hadd</span>
-                <span class="c">#check if add_ctrl,0 exists</span>
-                <span class="c">#Find and return add_ctrl, max(add_node)</span>
+                <span class="c1">#A new node wants an hadd</span>
+                <span class="c1">#check if add_ctrl,0 exists</span>
+                <span class="c1">#Find and return add_ctrl, max(add_node)</span>
                 <span class="n">max_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">add_node</span><span class="p">))</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">add_ctrl</span><span class="o">==</span><span class="n">add_ctrl</span><span class="p">)</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">max_node</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="bp">None</span>
+                <span class="k">if</span> <span class="n">max_node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">None</span>
                 <span class="n">add_node</span> <span class="o">=</span> <span class="n">max_node</span> <span class="o">+</span> <span class="mi">1</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">repair_lease</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
         <span class="k">finally</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_new_lease_lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
-</div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_new_lease_lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span></div>
+
 <div class="viewcode-block" id="LeaseManager.lock_lease"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.lock_lease">[docs]</a>    <span class="k">def</span> <span class="nf">lock_lease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Lock a lease already in database. We should manage the case of a db crash.</span>
 <span class="sd">        Also update last_seen to now and state to boot</span>
@@ -261,15 +260,15 @@
         <span class="n">query</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">add_ctrl</span><span class="o">==</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">add_node</span><span class="o">==</span><span class="n">add_node</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
-            <span class="n">node</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">&quot;BOOT&quot;</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;BOOT&quot;</span>
             <span class="n">node</span><span class="o">.</span><span class="n">last_seen</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">last_seen</span><span class="p">)</span>
             <span class="n">ddict</span> <span class="o">=</span> <span class="n">saobject_to_dict</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">ddict</span>
         <span class="k">except</span> <span class="n">sa</span><span class="o">.</span><span class="n">orm</span><span class="o">.</span><span class="n">exc</span><span class="o">.</span><span class="n">NoResultFound</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">None</span>
-</div>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
 <div class="viewcode-block" id="LeaseManager.repair_lease"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.repair_lease">[docs]</a>    <span class="k">def</span> <span class="nf">repair_lease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Repair a lease. If the dhcpd database is lost, some client can send their adress and some other informations to rebuid it.</span>
 <span class="sd">        Also update last_seen to now and state to boot</span>
@@ -282,25 +281,25 @@
 <span class="sd">        :type options: dict()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">soptions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">lname</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="n">llocation</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="n">lcmd_classes</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;name&#39;</span><span class="p">:</span>
+        <span class="n">lname</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">llocation</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">lcmd_classes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span>
                 <span class="n">lname</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;location&#39;</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span>
                 <span class="n">llocation</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;cmd_classes&#39;</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;cmd_classes&#39;</span><span class="p">:</span>
                 <span class="n">lcmd_classes</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">soptions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">LeaseParam</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">(</span><span class="n">add_ctrl</span><span class="o">=</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="o">=</span><span class="n">add_node</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lname</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">llocation</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s">&#39;BOOT&#39;</span><span class="p">,</span> <span class="n">cmd_classes</span><span class="o">=</span><span class="n">lcmd_classes</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">now</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">soptions</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s">&#39;BOOT&#39;</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">now</span> <span class="p">)</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">(</span><span class="n">add_ctrl</span><span class="o">=</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="o">=</span><span class="n">add_node</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lname</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">llocation</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;BOOT&#39;</span><span class="p">,</span> <span class="n">cmd_classes</span><span class="o">=</span><span class="n">lcmd_classes</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">now</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">soptions</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;BOOT&#39;</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">now</span> <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolv_hadd</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">)</span>
-</div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolv_hadd</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="LeaseManager.release_lease"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.release_lease">[docs]</a>    <span class="k">def</span> <span class="nf">release_lease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Release a lease. When a controller / node shutdown, it must release its nodes. Set the state to offline</span>
 <span class="sd">        return false or true</span>
@@ -316,11 +315,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">)</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
-            <span class="n">node</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">&quot;OFFLINE&quot;</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;OFFLINE&quot;</span>
             <span class="n">node</span><span class="o">.</span><span class="n">last_seen</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolv_hadd</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">)</span>
-</div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolv_hadd</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="LeaseManager.remove_lease"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.remove_lease">[docs]</a>    <span class="k">def</span> <span class="nf">remove_lease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove a lease from db</span>
 
@@ -342,9 +341,9 @@
         <span class="n">nodes</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-</div>
-<div class="viewcode-block" id="LeaseManager.resolv_name"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.resolv_name">[docs]</a>    <span class="k">def</span> <span class="nf">resolv_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="LeaseManager.resolv_name"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.resolv_name">[docs]</a>    <span class="k">def</span> <span class="nf">resolv_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Resolv a name, location to lease(s)</span>
 
 <span class="sd">        :param extras: The extra inforamtions to add</span>
@@ -355,25 +354,25 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">)</span>
         <span class="n">conditions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="n">location</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="c">#Look for name in all locations</span>
+        <span class="k">if</span> <span class="n">location</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1">#Look for name in all locations</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="c">#Look for location</span>
-            <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="o">+</span><span class="n">location</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">location</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="c">#Return all locations</span>
+        <span class="k">elif</span> <span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1">#Look for location</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="o">+</span><span class="n">location</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">location</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1">#Return all locations</span>
             <span class="k">pass</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c">#Look for name in one location</span>
+            <span class="c1">#Look for name in one location</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">,</span> <span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="n">location</span><span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
         <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-            <span class="c">#print line.cmd_classes</span>
+            <span class="c1">#print line.cmd_classes</span>
             <span class="n">res</span><span class="p">[</span><span class="n">HADD</span><span class="o">%</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">add_node</span><span class="p">)]</span> <span class="o">=</span> <span class="n">saobject_to_dict</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">res</span>
-</div>
+        <span class="k">return</span> <span class="n">res</span></div>
+
 <div class="viewcode-block" id="LeaseManager.resolv_cmd_classes"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.resolv_cmd_classes">[docs]</a>    <span class="k">def</span> <span class="nf">resolv_cmd_classes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd_classes</span><span class="o">=</span><span class="p">[]):</span>
         <span class="sd">&quot;&quot;&quot;Resolv a cmd_classes to lease(s)</span>
 
@@ -385,20 +384,20 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="p">)</span>
         <span class="n">conditions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">cmd_classes</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">cmd_classes</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
             <span class="n">cmd_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmd_classes</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">cmdc</span> <span class="ow">in</span> <span class="n">cmd_classes</span><span class="p">:</span>
-            <span class="c">#print cmdc</span>
-            <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">cmd_classes</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="o">+</span><span class="n">cmdc</span><span class="o">+</span><span class="s">&quot;%&quot;</span><span class="p">))</span>
+            <span class="c1">#print cmdc</span>
+            <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jntmodel</span><span class="o">.</span><span class="n">Lease</span><span class="o">.</span><span class="n">cmd_classes</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="o">+</span><span class="n">cmdc</span><span class="o">+</span><span class="s2">&quot;%&quot;</span><span class="p">))</span>
         <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">or_</span><span class="p">(</span><span class="o">*</span><span class="n">conditions</span><span class="p">))</span>
-        <span class="c">#query = query.filter(jntmodel.Lease.cmd_classes.like(&quot;&quot;+cmd_classes[0]+&quot;%&quot;))</span>
+        <span class="c1">#query = query.filter(jntmodel.Lease.cmd_classes.like(&quot;&quot;+cmd_classes[0]+&quot;%&quot;))</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
         <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-            <span class="c">#print line.cmd_classes</span>
+            <span class="c1">#print line.cmd_classes</span>
             <span class="n">res</span><span class="p">[</span><span class="n">HADD</span><span class="o">%</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">add_node</span><span class="p">)]</span> <span class="o">=</span> <span class="n">saobject_to_dict</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">res</span>
-</div>
+        <span class="k">return</span> <span class="n">res</span></div>
+
 <div class="viewcode-block" id="LeaseManager.resolv_hadd"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.resolv_hadd">[docs]</a>    <span class="k">def</span> <span class="nf">resolv_hadd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Resolv an address to lease</span>
 
@@ -413,18 +412,18 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">ddict</span> <span class="o">=</span> <span class="n">saobject_to_dict</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">one</span><span class="p">())</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">ddict</span><span class="p">[</span><span class="s">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">add_ctrl</span><span class="p">][</span><span class="n">add_node</span><span class="p">][</span><span class="s">&#39;state&#39;</span><span class="p">]</span>
+                <span class="n">ddict</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">add_ctrl</span><span class="p">][</span><span class="n">add_node</span><span class="p">][</span><span class="s1">&#39;state&#39;</span><span class="p">]</span>
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">ddict</span><span class="p">[</span><span class="s">&#39;last_seen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">add_ctrl</span><span class="p">][</span><span class="n">add_node</span><span class="p">][</span><span class="s">&#39;last_seen&#39;</span><span class="p">]</span>
+                <span class="n">ddict</span><span class="p">[</span><span class="s1">&#39;last_seen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">entries</span><span class="p">[</span><span class="n">add_ctrl</span><span class="p">][</span><span class="n">add_node</span><span class="p">][</span><span class="s1">&#39;last_seen&#39;</span><span class="p">]</span>
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">return</span> <span class="n">ddict</span>
         <span class="k">except</span> <span class="n">sa</span><span class="o">.</span><span class="n">orm</span><span class="o">.</span><span class="n">exc</span><span class="o">.</span><span class="n">NoResultFound</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">None</span>
-</div>
-<div class="viewcode-block" id="LeaseManager.heartbeat_hadd"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.heartbeat_hadd">[docs]</a>    <span class="k">def</span> <span class="nf">heartbeat_hadd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s">&#39;ONLINE&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="LeaseManager.heartbeat_hadd"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.heartbeat_hadd">[docs]</a>    <span class="k">def</span> <span class="nf">heartbeat_hadd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;ONLINE&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A machine heartbeat us</span>
 
 <span class="sd">        :param add_ctrl: the controller part of the address</span>
@@ -432,13 +431,13 @@
 <span class="sd">        :param add_node: the node part of the address. 0 for controller, -1 for all nodes managed by controller.</span>
 <span class="sd">        :type add_node: Integer</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c">#~ print &quot;Update heartbeat here&quot;</span>
+        <span class="c1">#~ print &quot;Update heartbeat here&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cachemgr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">add_ctrl</span><span class="p">,</span> <span class="n">add_node</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">,</span> <span class="n">last_seen</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">&#39;Catched exception&#39;</span><span class="p">)</span>
-</div>
-<div class="viewcode-block" id="LeaseManager.check_heartbeat"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.check_heartbeat">[docs]</a>    <span class="k">def</span> <span class="nf">check_heartbeat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Catched exception&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LeaseManager.check_heartbeat"><a class="viewcode-back" href="../../api/index.html#janitoo_dhcp.lease.LeaseManager.check_heartbeat">[docs]</a>    <span class="k">def</span> <span class="nf">check_heartbeat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check the states of the machine. Must be called in a timer</span>
 <span class="sd">        Called in a separate thread. Must use a scoped_session.</span>
 
@@ -451,7 +450,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">dbsession</span><span class="o">.</span><span class="n">expunge_all</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s">&#39;Catched exception&#39;</span><span class="p">)</span></div></div>
+            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Catched exception&#39;</span><span class="p">)</span></div></div>
 </pre></div>
 
     </div>
@@ -466,7 +465,7 @@
     </p>
     <p>
         &copy; Copyright 2014,2015,2016 Sébastien GALLET aka bibi2100 &lt;bibi21000@gmail.com&gt;.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
     </p>
   </div>
 </footer>
